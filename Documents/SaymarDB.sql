@@ -1,6 +1,8 @@
 
 --Create database
 
+
+
 USE [master]
 GO
 IF NOT EXISTS (SELECT [name] FROM sys.databases WHERE name = N'SamyakDB')
@@ -1330,6 +1332,62 @@ INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [Proce
 	VALUES (1017, CAST(0x0000a97f0117b9df AS datetime), 3, N'SEARCH_PATIENTS', N'102', N'1', N'Incorrect syntax near ''MEDICINE_NAME''.', N'')
 
 GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1018, CAST(0x0000a9b701517da8 AS datetime), 3, N'FETCH_PATIENT_DETAILS', N'245', N'18', N'Conversion failed when converting the varchar value ''SELECT  * FROM MedicineMaster ORDER BY @START OFFSET '' to data type int.', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1019, CAST(0x0000a9b701519daf AS datetime), 3, N'FETCH_PATIENT_DETAILS', N'245', N'18', N'Conversion failed when converting the varchar value ''SELECT  * FROM MedicineMaster ORDER BY @START OFFSET '' to data type int.', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1020, CAST(0x0000a9b70151c34b AS datetime), 3, N'FETCH_PATIENT_DETAILS', N'137', N'1', N'Must declare the scalar variable "@START".', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1021, CAST(0x0000a9b800272ad1 AS datetime), 3, N'FETCH_PATIENT_DETAILS', N'156', N'2', N'Incorrect syntax near the keyword ''OR''.', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1022, CAST(0x0000a9b8002758a0 AS datetime), 3, N'FETCH_PATIENT_DETAILS', N'156', N'2', N'Incorrect syntax near the keyword ''OR''.', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1023, CAST(0x0000a9b800276f4e AS datetime), 3, N'FETCH_PATIENT_DETAILS', N'156', N'2', N'Incorrect syntax near the keyword ''OR''.', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1024, CAST(0x0000a9be01223684 AS datetime), 3, N'GET_ALL_OILGHEE_DETAILS', N'156', N'7', N'Incorrect syntax near the keyword ''UNION''.', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1025, CAST(0x0000a9be01225882 AS datetime), 3, N'GET_ALL_OILGHEE_DETAILS', N'156', N'3', N'Incorrect syntax near the keyword ''UNION''.', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1026, CAST(0x0000a9be012271fc AS datetime), 3, N'GET_ALL_OILGHEE_DETAILS', N'156', N'3', N'Incorrect syntax near the keyword ''UNION''.', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1027, CAST(0x0000a9be01303827 AS datetime), 3, N'GET_ALL_OILGHEE_DETAILS', N'102', N'1', N'Incorrect syntax near ''OIL_NAME''.', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1028, CAST(0x0000a9be01304aef AS datetime), 3, N'GET_ALL_OILGHEE_DETAILS', N'102', N'1', N'Incorrect syntax near ''OIL_NAME''.', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1029, CAST(0x0000a9be01306ee1 AS datetime), 3, N'GET_ALL_OILGHEE_DETAILS', N'102', N'1', N'Incorrect syntax near ''OIL_NAME''.', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1030, CAST(0x0000a9be0130aa62 AS datetime), 3, N'GET_ALL_OILGHEE_DETAILS', N'102', N'1', N'Incorrect syntax near ''OIL_NAME''.', N'')
+
+GO
+INSERT INTO [dbo].[Error_Log] ([Record_ID], [DateCreated], [ProcedureID], [ProcedureName], [ErrorCode], [ErrorLine], [ErrorMessage], [Description])
+	VALUES (1031, CAST(0x0000a9be0130e461 AS datetime), 3, N'GET_ALL_OILGHEE_DETAILS', N'102', N'1', N'Incorrect syntax near ''GHEE_NAME''.', N'')
+
+GO
 SET IDENTITY_INSERT [dbo].[Error_Log] OFF
 GO
 
@@ -1345,54 +1403,30 @@ CREATE TABLE [dbo].[FollowUpDetails] (
 	[FollowUpRequired] [nvarchar](25) NULL,
 	[FollowUpFor] [varchar](25) NULL,
 	[FollowUpDate] [date] NULL,
-	[FollowUpDoneDate] [date] NULL CONSTRAINT [DF__FollowUpD__Follo__29221CFB] DEFAULT (getdate()),
+	[FollowUpDoneDate] [date] NULL,
 	[FollowUpNumber] [numeric](10, 0) NULL);
 GO
 
 SET IDENTITY_INSERT [dbo].[FollowUpDetails] ON
 GO
 INSERT INTO [dbo].[FollowUpDetails] ([ID], [Case_ID], [FollowUpRequired], [FollowUpFor], [FollowUpDate], [FollowUpDoneDate], [FollowUpNumber])
-	VALUES (1, N'CASE201807141029220', N'YES', N'PANCHAKARMA', CAST(0xc83e0b AS date), CAST(0x783e0b AS date), 0)
+	VALUES (1, N'CASE201808091558162', N'Yes', N'MEDICINE', CAST(0xa73e0b AS date), CAST(0x923e0b AS date), NULL)
 
 GO
 INSERT INTO [dbo].[FollowUpDetails] ([ID], [Case_ID], [FollowUpRequired], [FollowUpFor], [FollowUpDate], [FollowUpDoneDate], [FollowUpNumber])
-	VALUES (2, N'CASE201807141045074', N'YES', N'PANCHAKARMA', CAST(0xc83e0b AS date), CAST(0x783e0b AS date), 0)
+	VALUES (2, N'CASE201808091558162', N'Yes', N'MEDICINE', CAST(0x0c3f0b AS date), NULL, NULL)
 
 GO
 INSERT INTO [dbo].[FollowUpDetails] ([ID], [Case_ID], [FollowUpRequired], [FollowUpFor], [FollowUpDate], [FollowUpDoneDate], [FollowUpNumber])
-	VALUES (6, N'CASE201807141052291', N'YES', N'MASSAGE', CAST(0xc83e0b AS date), CAST(0x783e0b AS date), 0)
+	VALUES (3, N'CASE201808091558162', N'Yes', N'MEDICINE', CAST(0xee3e0b AS date), NULL, NULL)
 
 GO
 INSERT INTO [dbo].[FollowUpDetails] ([ID], [Case_ID], [FollowUpRequired], [FollowUpFor], [FollowUpDate], [FollowUpDoneDate], [FollowUpNumber])
-	VALUES (7, N'CASE201807141158559', N'YES', N'MEDICINE', CAST(0x8c3e0b AS date), CAST(0x783e0b AS date), 0)
+	VALUES (4, N'CASE201808091558162', N'Yes', N'MEDICINE', CAST(0xcf3e0b AS date), CAST(0x0d3f0b AS date), NULL)
 
 GO
 INSERT INTO [dbo].[FollowUpDetails] ([ID], [Case_ID], [FollowUpRequired], [FollowUpFor], [FollowUpDate], [FollowUpDoneDate], [FollowUpNumber])
-	VALUES (1007, N'CASE201808091558162', N'Yes', N'MEDICINE', CAST(0xa73e0b AS date), CAST(0x923e0b AS date), 0)
-
-GO
-INSERT INTO [dbo].[FollowUpDetails] ([ID], [Case_ID], [FollowUpRequired], [FollowUpFor], [FollowUpDate], [FollowUpDoneDate], [FollowUpNumber])
-	VALUES (1008, N'CASE201808091931265', N'Yes', N'MEDICINE', CAST(0xa03e0b AS date), CAST(0x923e0b AS date), 0)
-
-GO
-INSERT INTO [dbo].[FollowUpDetails] ([ID], [Case_ID], [FollowUpRequired], [FollowUpFor], [FollowUpDate], [FollowUpDoneDate], [FollowUpNumber])
-	VALUES (1056, N'CASE201808112354438', N'Yes', N'MEDICINE', CAST(0x943e0b AS date), CAST(0x953e0b AS date), 0)
-
-GO
-INSERT INTO [dbo].[FollowUpDetails] ([ID], [Case_ID], [FollowUpRequired], [FollowUpFor], [FollowUpDate], [FollowUpDoneDate], [FollowUpNumber])
-	VALUES (1091, N'CASE201808121057399', N'Yes', N'MEDICINE', CAST(0xc83e0b AS date), CAST(0x953e0b AS date), 0)
-
-GO
-INSERT INTO [dbo].[FollowUpDetails] ([ID], [Case_ID], [FollowUpRequired], [FollowUpFor], [FollowUpDate], [FollowUpDoneDate], [FollowUpNumber])
-	VALUES (1095, N'CASE201808160101586', N'Yes', N'MEDICINE', CAST(0xa73e0b AS date), CAST(0x993e0b AS date), 0)
-
-GO
-INSERT INTO [dbo].[FollowUpDetails] ([ID], [Case_ID], [FollowUpRequired], [FollowUpFor], [FollowUpDate], [FollowUpDoneDate], [FollowUpNumber])
-	VALUES (1098, N'CASE201809131226285', N'Yes', N'MEDICINE', CAST(0xc83e0b AS date), CAST(0xb53e0b AS date), 0)
-
-GO
-INSERT INTO [dbo].[FollowUpDetails] ([ID], [Case_ID], [FollowUpRequired], [FollowUpFor], [FollowUpDate], [FollowUpDoneDate], [FollowUpNumber])
-	VALUES (1099, N'CASE201810021018400', N'Yes', N'MEDICINE', CAST(0xc83e0b AS date), CAST(0xc83e0b AS date), 0)
+	VALUES (5, N'CASE201808091558162', N'Yes', N'MEDICINE', CAST(0x2d3f0b AS date), NULL, NULL)
 
 GO
 SET IDENTITY_INSERT [dbo].[FollowUpDetails] OFF
@@ -1509,6 +1543,18 @@ INSERT INTO [dbo].[GheeDetails] ([ID], [GHEE_NAME], [GHEE_TYPE], [GHEE_FOR], [GH
 GO
 INSERT INTO [dbo].[GheeDetails] ([ID], [GHEE_NAME], [GHEE_TYPE], [GHEE_FOR], [GHEE_FOR_TYPE], [CREATED_DATE])
 	VALUES (24, N'महातिक्त घृत', N'', N'PANCHAKARMA', N'VIRECHANA', CAST(0xdd3e0b AS date))
+
+GO
+INSERT INTO [dbo].[GheeDetails] ([ID], [GHEE_NAME], [GHEE_TYPE], [GHEE_FOR], [GHEE_FOR_TYPE], [CREATED_DATE])
+	VALUES (25, N'test', NULL, N'PANCHAKARMA', N'VIRECHANA', CAST(0x163f0b AS date))
+
+GO
+INSERT INTO [dbo].[GheeDetails] ([ID], [GHEE_NAME], [GHEE_TYPE], [GHEE_FOR], [GHEE_FOR_TYPE], [CREATED_DATE])
+	VALUES (26, N'test', NULL, N'PANCHAKARMA', N'VIRECHANA', CAST(0x163f0b AS date))
+
+GO
+INSERT INTO [dbo].[GheeDetails] ([ID], [GHEE_NAME], [GHEE_TYPE], [GHEE_FOR], [GHEE_FOR_TYPE], [CREATED_DATE])
+	VALUES (27, N'test ghee', NULL, N'MEDICINE', N'--', CAST(0x193f0b AS date))
 
 GO
 SET IDENTITY_INSERT [dbo].[GheeDetails] OFF
@@ -1712,6 +1758,46 @@ INSERT INTO [dbo].[MedicineDetails] ([ID], [Case_ID], [MedicineName], [MedicineT
 	VALUES (44, N'CASE201810021018400', N'TAB2', N'चुर्ण', N'0', N'1', N'', N'साधे पाणी', N'0', N'Yes', CAST(0xd83e0b AS date))
 
 GO
+INSERT INTO [dbo].[MedicineDetails] ([ID], [Case_ID], [MedicineName], [MedicineType], [MedicineDuration], [MedicineFrequency], [MedicineWhenToTake], [MedicineWithToTake], [MedicineQuantity], [FollowuRequired], [FollowuDate])
+	VALUES (45, N'CASE201808091558162', N'काढा क्रं 1', N'काढा', N'30', N'1-1', N'उपाशी पोटी, जेव', N'साधे पाणी', N'0', N'Yes', CAST(0x2b3f0b AS date))
+
+GO
+INSERT INTO [dbo].[MedicineDetails] ([ID], [Case_ID], [MedicineName], [MedicineType], [MedicineDuration], [MedicineFrequency], [MedicineWhenToTake], [MedicineWithToTake], [MedicineQuantity], [FollowuRequired], [FollowuDate])
+	VALUES (46, N'CASE201808091558162', N'काढा क्रं 2', N'काढा', N'30', N'1', N'उपाशी पोटी', N'साधे पाणी', N'0', N'Yes', CAST(0x2b3f0b AS date))
+
+GO
+INSERT INTO [dbo].[MedicineDetails] ([ID], [Case_ID], [MedicineName], [MedicineType], [MedicineDuration], [MedicineFrequency], [MedicineWhenToTake], [MedicineWithToTake], [MedicineQuantity], [FollowuRequired], [FollowuDate])
+	VALUES (47, N'CASE201808091558162', N'काढा क्रं 123', N'काढा', N'w', N'1', N'', N'साधे पाणी', N'0', N'Yes', CAST(0x2d3f0b AS date))
+
+GO
+INSERT INTO [dbo].[MedicineDetails] ([ID], [Case_ID], [MedicineName], [MedicineType], [MedicineDuration], [MedicineFrequency], [MedicineWhenToTake], [MedicineWithToTake], [MedicineQuantity], [FollowuRequired], [FollowuDate])
+	VALUES (48, N'CASE201808091558162', N'काढा क्रं 2', N'काढा', N'w', N'1', N'', N'साधे पाणी', N'0', N'Yes', CAST(0x2d3f0b AS date))
+
+GO
+INSERT INTO [dbo].[MedicineDetails] ([ID], [Case_ID], [MedicineName], [MedicineType], [MedicineDuration], [MedicineFrequency], [MedicineWhenToTake], [MedicineWithToTake], [MedicineQuantity], [FollowuRequired], [FollowuDate])
+	VALUES (49, N'CASE201808091558162', N'काढा क्रं 1', N'काढा', N'2', N'1', N'', N'साधे पाणी', N'0', N'Yes', CAST(0x2d3f0b AS date))
+
+GO
+INSERT INTO [dbo].[MedicineDetails] ([ID], [Case_ID], [MedicineName], [MedicineType], [MedicineDuration], [MedicineFrequency], [MedicineWhenToTake], [MedicineWithToTake], [MedicineQuantity], [FollowuRequired], [FollowuDate])
+	VALUES (50, N'CASE201808091558162', N'काढा क्रं 2', N'काढा', N'2', N'1', N'', N'साधे पाणी', N'0', N'Yes', CAST(0x2d3f0b AS date))
+
+GO
+INSERT INTO [dbo].[MedicineDetails] ([ID], [Case_ID], [MedicineName], [MedicineType], [MedicineDuration], [MedicineFrequency], [MedicineWhenToTake], [MedicineWithToTake], [MedicineQuantity], [FollowuRequired], [FollowuDate])
+	VALUES (51, N'CASE201808091558162', N'गोळी2', N'गोळी', N'30', N'1', N'जेवनापूर्वी-सका', N'साधे पाणी', N'0', N'Yes', CAST(0x2d3f0b AS date))
+
+GO
+INSERT INTO [dbo].[MedicineDetails] ([ID], [Case_ID], [MedicineName], [MedicineType], [MedicineDuration], [MedicineFrequency], [MedicineWhenToTake], [MedicineWithToTake], [MedicineQuantity], [FollowuRequired], [FollowuDate])
+	VALUES (52, N'CASE201808091558162', N'गोळी2', N'गोळी', N'30', N'1', N'जेवनापूर्वी-सका', N'साधे पाणी', N'0', N'Yes', CAST(0x2d3f0b AS date))
+
+GO
+INSERT INTO [dbo].[MedicineDetails] ([ID], [Case_ID], [MedicineName], [MedicineType], [MedicineDuration], [MedicineFrequency], [MedicineWhenToTake], [MedicineWithToTake], [MedicineQuantity], [FollowuRequired], [FollowuDate])
+	VALUES (53, N'CASE201808091558162', N'गोळी2', N'गोळी', N'30', N'1', N'उपाशी पोटी, जेव', N'साधे पाणी', N'0', N'Yes', CAST(0x2d3f0b AS date))
+
+GO
+INSERT INTO [dbo].[MedicineDetails] ([ID], [Case_ID], [MedicineName], [MedicineType], [MedicineDuration], [MedicineFrequency], [MedicineWhenToTake], [MedicineWithToTake], [MedicineQuantity], [FollowuRequired], [FollowuDate])
+	VALUES (54, N'CASE201808091558162', N'काढा क्रं 1', N'काढा', N'30', N'1', N'', N'साधे पाणी', N'0', N'Yes', CAST(0x143f0b AS date))
+
+GO
 SET IDENTITY_INSERT [dbo].[MedicineDetails] OFF
 GO
 
@@ -1792,6 +1878,42 @@ INSERT INTO [dbo].[MedicineMaster] ([ID], [MEDICINE_ID], [MEDICINE_NAME], [MEDIC
 GO
 INSERT INTO [dbo].[MedicineMaster] ([ID], [MEDICINE_ID], [MEDICINE_NAME], [MEDICINE_TYPE], [MEDICINE_UNIT], [CREATED_DATE], [MEDICINE_FOR], [MEDICINE_FOR_TYPE])
 	VALUES (15, N'TAB1', N'गोळी10', N'TAB', N'TAB', CAST(0x993e0b AS date), NULL, NULL)
+
+GO
+INSERT INTO [dbo].[MedicineMaster] ([ID], [MEDICINE_ID], [MEDICINE_NAME], [MEDICINE_TYPE], [MEDICINE_UNIT], [CREATED_DATE], [MEDICINE_FOR], [MEDICINE_FOR_TYPE])
+	VALUES (16, N'TAB11', N'test', N'Tablets', N'', CAST(0x0e3f0b AS date), N'Panchakarma', N'Vaman')
+
+GO
+INSERT INTO [dbo].[MedicineMaster] ([ID], [MEDICINE_ID], [MEDICINE_NAME], [MEDICINE_TYPE], [MEDICINE_UNIT], [CREATED_DATE], [MEDICINE_FOR], [MEDICINE_FOR_TYPE])
+	VALUES (17, N'TAB12', N'', N'Tablets', N'', CAST(0x0f3f0b AS date), N'Select', N'Select')
+
+GO
+INSERT INTO [dbo].[MedicineMaster] ([ID], [MEDICINE_ID], [MEDICINE_NAME], [MEDICINE_TYPE], [MEDICINE_UNIT], [CREATED_DATE], [MEDICINE_FOR], [MEDICINE_FOR_TYPE])
+	VALUES (18, N'TAB13', N'', N'Tablets', N'', CAST(0x0f3f0b AS date), N'Select', N'Select')
+
+GO
+INSERT INTO [dbo].[MedicineMaster] ([ID], [MEDICINE_ID], [MEDICINE_NAME], [MEDICINE_TYPE], [MEDICINE_UNIT], [CREATED_DATE], [MEDICINE_FOR], [MEDICINE_FOR_TYPE])
+	VALUES (19, N'CHU1', N'test', N'Churna', N'', CAST(0x0f3f0b AS date), N'Medicine', N'Select')
+
+GO
+INSERT INTO [dbo].[MedicineMaster] ([ID], [MEDICINE_ID], [MEDICINE_NAME], [MEDICINE_TYPE], [MEDICINE_UNIT], [CREATED_DATE], [MEDICINE_FOR], [MEDICINE_FOR_TYPE])
+	VALUES (20, N'TAB14', N'', N'Tablets', N'', CAST(0x123f0b AS date), N'Select', N'Select')
+
+GO
+INSERT INTO [dbo].[MedicineMaster] ([ID], [MEDICINE_ID], [MEDICINE_NAME], [MEDICINE_TYPE], [MEDICINE_UNIT], [CREATED_DATE], [MEDICINE_FOR], [MEDICINE_FOR_TYPE])
+	VALUES (21, N'TAB15', N'asdsad', N'Tablets', N'', CAST(0x133f0b AS date), N'Select', N'Select')
+
+GO
+INSERT INTO [dbo].[MedicineMaster] ([ID], [MEDICINE_ID], [MEDICINE_NAME], [MEDICINE_TYPE], [MEDICINE_UNIT], [CREATED_DATE], [MEDICINE_FOR], [MEDICINE_FOR_TYPE])
+	VALUES (22, N'TAB16', N'asdada', N'Tablets', N'', CAST(0x133f0b AS date), N'Select', N'Select')
+
+GO
+INSERT INTO [dbo].[MedicineMaster] ([ID], [MEDICINE_ID], [MEDICINE_NAME], [MEDICINE_TYPE], [MEDICINE_UNIT], [CREATED_DATE], [MEDICINE_FOR], [MEDICINE_FOR_TYPE])
+	VALUES (23, N'TAB17', N'asdasd', N'Tablets', N'', CAST(0x133f0b AS date), N'Panchakarma', N'Vaman')
+
+GO
+INSERT INTO [dbo].[MedicineMaster] ([ID], [MEDICINE_ID], [MEDICINE_NAME], [MEDICINE_TYPE], [MEDICINE_UNIT], [CREATED_DATE], [MEDICINE_FOR], [MEDICINE_FOR_TYPE])
+	VALUES (24, N'TAB18', N'asdad', N'Tablets', N'', CAST(0x133f0b AS date), N'Panchakarma', N'Virechana')
 
 GO
 SET IDENTITY_INSERT [dbo].[MedicineMaster] OFF
@@ -2330,6 +2452,14 @@ INSERT INTO [dbo].[OilDetails] ([ID], [OIL_NAME], [OIL_TYPE], [OIL_FOR], [OIL_FO
 	VALUES (16, N'एरंडेल तेल', N'', N'PANCHAKARMA', N'BASTI', CAST(0xdd3e0b AS date))
 
 GO
+INSERT INTO [dbo].[OilDetails] ([ID], [OIL_NAME], [OIL_TYPE], [OIL_FOR], [OIL_FOR_TYPE], [CREATED_DATE])
+	VALUES (17, N'asdsad', NULL, N'PANCHAKARMA', N'VAMAN', CAST(0x163f0b AS date))
+
+GO
+INSERT INTO [dbo].[OilDetails] ([ID], [OIL_NAME], [OIL_TYPE], [OIL_FOR], [OIL_FOR_TYPE], [CREATED_DATE])
+	VALUES (18, N'test Oil', NULL, N'MEDICINE', N'--', CAST(0x193f0b AS date))
+
+GO
 SET IDENTITY_INSERT [dbo].[OilDetails] OFF
 GO
 
@@ -2765,6 +2895,31 @@ GO
 SET IDENTITY_INSERT [dbo].[Patient_Details] OFF
 GO
 
+--Table dbo.RAKTAMOKSHANA_BASIS_DETAILS
+
+USE [SamyakDB]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[RAKTAMOKSHANA_BASIS_DETAILS] (
+	[ID] [int] NOT NULL IDENTITY (1, 1),
+	[CASE_ID] [varchar](50) NULL,
+	[BLEEDING_TIME] [nvarchar](50) NULL,
+	[CLOTING_TIME] [nvarchar](50) NULL,
+	[BLOOD_PRESSURE] [nvarchar](50) NULL,
+	[HB] [nvarchar](50) NULL,
+	[CREATED_DATE] [date] NULL CONSTRAINT [DF__RAKTAMOKS__CREAT__56B3DD81] DEFAULT (getdate()));
+GO
+
+SET IDENTITY_INSERT [dbo].[RAKTAMOKSHANA_BASIS_DETAILS] ON
+GO
+INSERT INTO [dbo].[RAKTAMOKSHANA_BASIS_DETAILS] ([ID], [CASE_ID], [BLEEDING_TIME], [CLOTING_TIME], [BLOOD_PRESSURE], [HB], [CREATED_DATE])
+	VALUES (1, N'CASE201808121029212', N'asdasd', N'asda', N'asda', N'asda', CAST(0xf03e0b AS date))
+
+GO
+SET IDENTITY_INSERT [dbo].[RAKTAMOKSHANA_BASIS_DETAILS] OFF
+GO
+
 --Table dbo.RAKTAMOKSHANA_DETAILS
 
 USE [SamyakDB]
@@ -2776,27 +2931,78 @@ CREATE TABLE [dbo].[RAKTAMOKSHANA_DETAILS] (
 	[CASE_ID] [varchar](50) NULL,
 	[SR_NO] [int] NULL,
 	[DATE] [date] NULL,
-	[PROCESS] [nvarchar](250) NULL,
+	[RAKTAMOKSHANATYPE] [nvarchar](50) NULL,
+	[SNEHAPAANYESNO] [nvarchar](5) NULL,
+	[SNEHAPAANDETAILS] [nvarchar](50) NULL,
+	[PLACE] [nvarchar](50) NULL,
+	[QUANTITY] [nvarchar](50) NULL,
 	[SYMPTOMS] [nvarchar](250) NULL,
-	[OTHER] [nvarchar](250) NULL,
 	[CREATED_DATE] [date] NULL);
 GO
 
 SET IDENTITY_INSERT [dbo].[RAKTAMOKSHANA_DETAILS] ON
 GO
-INSERT INTO [dbo].[RAKTAMOKSHANA_DETAILS] ([ID], [CASE_ID], [SR_NO], [DATE], [PROCESS], [SYMPTOMS], [OTHER], [CREATED_DATE])
-	VALUES (1, N'CASE201808121029212', 1, CAST(0xe53e0b AS date), N'', N'', N'', CAST(0xe43e0b AS date))
+INSERT INTO [dbo].[RAKTAMOKSHANA_DETAILS] ([ID], [CASE_ID], [SR_NO], [DATE], [RAKTAMOKSHANATYPE], [SNEHAPAANYESNO], [SNEHAPAANDETAILS], [PLACE], [QUANTITY], [SYMPTOMS], [CREATED_DATE])
+	VALUES (1, N'CASE201808121029212', 1, CAST(0xf13e0b AS date), N'asd', N'--', N'', N'asd', N'asd', N'asd', CAST(0xf03e0b AS date))
 
 GO
-INSERT INTO [dbo].[RAKTAMOKSHANA_DETAILS] ([ID], [CASE_ID], [SR_NO], [DATE], [PROCESS], [SYMPTOMS], [OTHER], [CREATED_DATE])
-	VALUES (2, N'CASE201808121029212', 2, CAST(0xe73e0b AS date), N'', N'', N'', CAST(0xe43e0b AS date))
+INSERT INTO [dbo].[RAKTAMOKSHANA_DETAILS] ([ID], [CASE_ID], [SR_NO], [DATE], [RAKTAMOKSHANATYPE], [SNEHAPAANYESNO], [SNEHAPAANDETAILS], [PLACE], [QUANTITY], [SYMPTOMS], [CREATED_DATE])
+	VALUES (2, N'CASE201808121029212', 2, CAST(0xf33e0b AS date), N'asd', N'--', N'', N'asd', N'asd', N'asd', CAST(0xf03e0b AS date))
 
 GO
-INSERT INTO [dbo].[RAKTAMOKSHANA_DETAILS] ([ID], [CASE_ID], [SR_NO], [DATE], [PROCESS], [SYMPTOMS], [OTHER], [CREATED_DATE])
-	VALUES (3, N'CASE201808121029212', 3, CAST(0xe93e0b AS date), N'', N'', N'', CAST(0xe43e0b AS date))
+INSERT INTO [dbo].[RAKTAMOKSHANA_DETAILS] ([ID], [CASE_ID], [SR_NO], [DATE], [RAKTAMOKSHANATYPE], [SNEHAPAANYESNO], [SNEHAPAANDETAILS], [PLACE], [QUANTITY], [SYMPTOMS], [CREATED_DATE])
+	VALUES (3, N'CASE201808121029212', 3, CAST(0xf53e0b AS date), N'asd', N'--', N'', N'asd', N'asd', N'asd', CAST(0xf03e0b AS date))
 
 GO
 SET IDENTITY_INSERT [dbo].[RAKTAMOKSHANA_DETAILS] OFF
+GO
+
+--Table dbo.RAKTAMOKSHANA_DIGNOSIS_DETAILS
+
+USE [SamyakDB]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[RAKTAMOKSHANA_DIGNOSIS_DETAILS] (
+	[ID] [int] NOT NULL IDENTITY (1, 1),
+	[CASE_ID] [varchar](50) NULL,
+	[DAYS] [nvarchar](50) NULL,
+	[QUANTITY] [nvarchar](50) NULL,
+	[SYMPTOMS] [nvarchar](250) NULL,
+	[CREATED_DATE] [date] NULL);
+GO
+
+SET IDENTITY_INSERT [dbo].[RAKTAMOKSHANA_DIGNOSIS_DETAILS] ON
+GO
+INSERT INTO [dbo].[RAKTAMOKSHANA_DIGNOSIS_DETAILS] ([ID], [CASE_ID], [DAYS], [QUANTITY], [SYMPTOMS], [CREATED_DATE])
+	VALUES (1, N'CASE201808121029212', N'asdasd', N'asdasd', N'asdasd', CAST(0xf93e0b AS date))
+
+GO
+SET IDENTITY_INSERT [dbo].[RAKTAMOKSHANA_DIGNOSIS_DETAILS] OFF
+GO
+
+--Table dbo.TableB
+
+USE [SamyakDB]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TableB] (
+	[ID] [int] NOT NULL IDENTITY (1, 1),
+	[ColName] [varchar](50) NULL);
+GO
+
+SET IDENTITY_INSERT [dbo].[TableB] ON
+GO
+INSERT INTO [dbo].[TableB] ([ID], [ColName])
+	VALUES (1, N'MEDICINE_NAME')
+
+GO
+INSERT INTO [dbo].[TableB] ([ID], [ColName])
+	VALUES (2, N'MEDICINE_TYPE')
+
+GO
+SET IDENTITY_INSERT [dbo].[TableB] OFF
 GO
 
 --Table dbo.UTTAR_BASTI_DETAILS
@@ -3264,9 +3470,12 @@ CREATE PROCEDURE [dbo].[INSERT_RAKTAMOKSHANA_DETAILS]
 @CASE_ID VARCHAR(50),
 @SrNo INT, 
 @Date DATE,
-@PROCESS NVARCHAR(250),
+@RAKTAMOKSHANATYPE NVARCHAR(50),
+@SNEHAPAANYESNO NVARCHAR(5),
+@SNEHAPAANDETAILS NVARCHAR(50),
+@PLACE NVARCHAR(50),
 @SYMPTOMS NVARCHAR(250),
-@OTHER NVARCHAR(250),
+@QUANTITY NVARCHAR(50),
 @ERROR_MESSAGE VARCHAR(25) OUTPUT
 AS
 BEGIN
@@ -3277,30 +3486,38 @@ BEGIN
 		IF (@CNT=0) BEGIN
 
 			INSERT INTO [dbo].[RAKTAMOKSHANA_DETAILS]
-				   ([CASE_ID]
-				   ,[SR_NO]
-				   ,[Date]
-				   ,[PROCESS]	
-				   ,[SYMPTOMS]
-				   ,[OTHER]
-				   ,[CREATED_DATE])
-			 VALUES
-				   (@CASE_ID, 
+				   ([CASE_ID],
+				   [SR_NO],
+				   [DATE],
+				   [RAKTAMOKSHANATYPE] ,
+				   [SNEHAPAANYESNO],
+				   [SNEHAPAANDETAILS] ,
+				   [PLACE],
+				   [QUANTITY],
+				   [SYMPTOMS],
+				   [CREATED_DATE] )
+			 VALUES	( @CASE_ID, 
 				   @SrNo, 
 				   convert(date, @Date, 105) ,			  
-				   @PROCESS,
+				   @RAKTAMOKSHANATYPE,
+				   @SNEHAPAANYESNO,
+				   @SNEHAPAANDETAILS,
+				   @PLACE,
+				   @QUANTITY,
 				   @SYMPTOMS,
-				   @OTHER , 
+
 				   GETDATE());
 				SET @ERROR_MESSAGE='TRUE';
 		END
 		ELSE  BEGIN
 			UPDATE  [dbo].[RAKTAMOKSHANA_DETAILS]	 SET 		  
-				   [Date]= convert(date, @Date, 105)
-				   ,[PROCESS]=@PROCESS				  
-				   ,[SYMPTOMS]=@SYMPTOMS
-				   ,[OTHER]=@OTHER
-				   ,[CREATED_DATE]=GETDATE()
+				   [Date]= convert(date, @Date, 105),
+				   [RAKTAMOKSHANATYPE]= @RAKTAMOKSHANATYPE,
+				   [SNEHAPAANYESNO]=@SNEHAPAANYESNO,
+				   [SNEHAPAANDETAILS] =@SNEHAPAANDETAILS,
+				   [PLACE]=@PLACE,
+				   [QUANTITY]=@QUANTITY,
+				   [SYMPTOMS]=@SYMPTOMS
 			WHERE SR_NO=@SrNo AND CASE_ID=@CASE_ID;
 			SET @ERROR_MESSAGE='TRUE';
 		END
@@ -3335,13 +3552,32 @@ BEGIN
 		SELECT ID
       ,CASE_ID
       ,SR_NO
-	  , Convert(varchar,Date,105) [DATE]
-	  ,PROCESS
-      ,SYMPTOMS
-	  ,OTHER
+	  , Convert(varchar,Date,105) [DATE],
+	  [RAKTAMOKSHANATYPE],
+	[SNEHAPAANYESNO] ,
+	[SNEHAPAANDETAILS],
+	[SYMPTOMS] ,
+	[PLACE] ,
+	[QUANTITY]
       ,CREATED_DATE FROM RAKTAMOKSHANA_DETAILS CD
 		WHERE CD.CASE_ID=@CASE_ID;	
 
+		SELECT ID
+      ,CASE_ID
+      ,BLEEDING_TIME
+	  ,CLOTING_TIME
+	  ,BLOOD_PRESSURE
+	  ,HB
+      ,CREATED_DATE FROM RAKTAMOKSHANA_BASIS_DETAILS CD
+		WHERE CD.CASE_ID=@CASE_ID;	
+
+		SELECT ID
+      ,CASE_ID
+      ,DAYS
+	  ,QUANTITY
+	  ,SYMPTOMS
+      ,CREATED_DATE FROM RAKTAMOKSHANA_DIGNOSIS_DETAILS CD
+		WHERE CD.CASE_ID=@CASE_ID;	
 
 		SET @ERROR_MESSAGE='TRUE';
 	END TRY
@@ -3394,6 +3630,78 @@ BEGIN
   @ErrorMessage,
   @Description);
 END
+
+GO
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+CREATE PROCEDURE [dbo].[MASTER_SAVE_MEDICINE_DETAILS]	
+	@OPERAION VARCHAR(10),
+	@MEDICINENAME NVARCHAR(250),
+	@MEDICINETYPE NVARCHAR(25),
+    @MEDICINEFOR NVARCHAR(25),
+    @PANCHAKARMATYPE NVARCHAR(25),
+	@ERROR_MESSAGE NVARCHAR(250) OUTPUT
+AS
+BEGIN
+	DECLARE @MEDICINE_ID VARCHAR(15)= '';
+	DECLARE @ID_CNT INT;
+
+	IF(@MEDICINETYPE='Tablets')
+	BEGIN
+	 	SET @ID_CNT=(SELECT COUNT([MEDICINE_ID])+1 FROM MedicineMaster WHERE MEDICINE_ID LIKE '%TAB%');
+		SET @MEDICINE_ID='TAB'+CAST(@ID_CNT AS varchar);
+	END
+	ELSE IF(@MEDICINETYPE='Churna')
+	BEGIN
+	 	SET @ID_CNT=(SELECT COUNT([MEDICINE_ID])+1 FROM MedicineMaster WHERE MEDICINE_ID LIKE '%CHURNA%');
+		SET @MEDICINE_ID='CHU'+CAST(@ID_CNT AS varchar);
+	END
+	BEGIN TRY
+		
+		IF(@OPERAION='I')
+		BEGIN			
+			
+	INSERT INTO [dbo].MedicineMaster
+           ([MEDICINE_ID]
+			,[MEDICINE_NAME]
+			,[MEDICINE_TYPE]
+			,[MEDICINE_UNIT]
+			,[MEDICINE_FOR]
+			,[MEDICINE_FOR_TYPE]
+			,[CREATED_DATE])
+     VALUES
+           (@MEDICINE_ID,@MEDICINENAME,@MEDICINETYPE,'',@MEDICINEFOR,@PANCHAKARMATYPE,GETDATE());
+
+			SET @ERROR_MESSAGE='TRUE';	
+		END
+		ELSE 
+		BEGIN
+			SET @ERROR_MESSAGE='FALSE';
+		END	
+	
+			
+	END TRY
+	BEGIN CATCH 
+		SET @ERROR_MESSAGE='FALSE';
+		DECLARE @ERRORNO NVARCHAR(20)=(SELECT ERROR_NUMBER());
+		DECLARE @ERRORLINE NVARCHAR(20)=(SELECT ERROR_LINE());
+		DECLARE @ERRORMSG NVARCHAR(MAX)=(SELECT ERROR_MESSAGE());
+		EXEC  sp_CallProcedureLog  6,'MASTER_SAVE_MEDICINE_DETAILS',@ERRORNO,@ERRORLINE,@ERRORMSG,'' ;
+	END CATCH;
+	
+END
+
+
+
+
+
 
 GO
 
@@ -3626,6 +3934,75 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
+
+CREATE PROCEDURE [dbo].[MASTER_SAVE_OILGHEE_DETAILS]	
+	@OPERAION VARCHAR(10),
+	@MEDICINENAME NVARCHAR(250),
+	@MEDICINETYPE NVARCHAR(25),
+    @MEDICINEFOR NVARCHAR(25),
+    @PANCHAKARMATYPE NVARCHAR(25),
+	@ERROR_MESSAGE NVARCHAR(250) OUTPUT
+AS
+BEGIN
+	DECLARE @MEDICINE_ID VARCHAR(15)= '';
+	DECLARE @ID_CNT INT;
+
+	BEGIN TRY
+		
+		IF(@OPERAION='I')
+		BEGIN			
+			IF(@MEDICINETYPE='OIL') BEGIN
+				INSERT INTO [dbo].OilDetails
+					   ([OIL_NAME]
+						,[OIL_FOR]
+						,[OIL_FOR_TYPE]
+						,[CREATED_DATE])
+				 VALUES
+					   (@MEDICINENAME,@MEDICINEFOR,@PANCHAKARMATYPE,GETDATE());
+
+						SET @ERROR_MESSAGE='TRUE';						
+			END
+			ELSE IF(@MEDICINETYPE='GHEE') BEGIN
+				INSERT INTO [dbo].GheeDetails
+					   (GHEE_NAME
+						,GHEE_FOR
+						,GHEE_FOR_TYPE
+						,[CREATED_DATE])
+				 VALUES
+					   (@MEDICINENAME,@MEDICINEFOR,@PANCHAKARMATYPE,GETDATE());
+
+						SET @ERROR_MESSAGE='TRUE';	
+			END
+			ELSE 
+			BEGIN
+						SET @ERROR_MESSAGE='FALSE';
+			END					
+		END				
+	END TRY
+	BEGIN CATCH 
+		SET @ERROR_MESSAGE='FALSE';
+		DECLARE @ERRORNO NVARCHAR(20)=(SELECT ERROR_NUMBER());
+		DECLARE @ERRORLINE NVARCHAR(20)=(SELECT ERROR_LINE());
+		DECLARE @ERRORMSG NVARCHAR(MAX)=(SELECT ERROR_MESSAGE());
+		EXEC  sp_CallProcedureLog  6,'MASTER_SAVE_MEDICINE_DETAILS',@ERRORNO,@ERRORLINE,@ERRORMSG,'' ;
+	END CATCH;
+	
+END
+
+
+
+
+
+
+GO
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
 -- =============================================
 -- Author:		Shashikant Shinde
 -- Create date: 16/06/2018
@@ -3693,23 +4070,8 @@ BEGIN
 	BEGIN TRY
 		
 		IF(@OPERAION='I')
-		BEGIN
+		BEGIN			
 			
-			INSERT INTO [dbo].[FollowUpDetails]
-           ([Case_ID]
-           ,[FollowUpRequired]
-           ,[FollowUpFor]
-           ,[FollowUpDate]
-           ,[FollowUpDoneDate]
-           ,[FollowUpNumber])
-     VALUES
-           (@CASE_ID
-           ,@FOLLOWUREQUIRED
-           ,'MEDICINE'
-           ,@FOLLOWUDATE
-           ,GETDATE()
-           ,0);
-	
 	INSERT INTO [dbo].[MedicineDetails]
            ([Case_ID],
 			[MedicineName] ,
@@ -3834,6 +4196,91 @@ BEGIN
 	END CATCH;
 
 END
+GO
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+-- =============================================
+-- Author:		Shashikant Shinde
+-- Create date: 16/06/2018
+-- Description:	Used to insert paitent's past history and family history
+-- =============================================
+CREATE PROCEDURE [dbo].[GET_ALL_OILGHEE_DETAILS]
+@TYPE VARCHAR(15),
+@START INT ,
+@LENGTH INT,
+@SEARCHVAL NVARCHAR(50),
+@ERROR_MESSAGE VARCHAR(25) OUTPUT
+AS
+BEGIN
+	
+	BEGIN TRY	
+	
+	declare @sql nvarchar(Max)
+	IF @TYPE='Oil' BEGIN
+		IF (@SEARCHVAL !='') 
+		BEGIN
+			Set @sql=	'SELECT ROW_NUMBER() OVER(ORDER BY (SELECT 1)) AS [ID],  OIL_NAME AS [NAME],OIL_FOR AS  [FOR],OIL_FOR_TYPE AS [TYPE_FOR] FROM OilDetails
+						WHERE 
+						OIL_NAME LIKE ''%'+@SEARCHVAL+'%''
+						OR OIL_FOR LIKE ''%'+@SEARCHVAL+'%''
+						OR OIL_FOR_TYPE LIKE ''%'+@SEARCHVAL+'%''
+						ORDER BY ID OFFSET '+CAST(@START AS VARCHAR)+' ROWS FETCH NEXT '+CAST(@LENGTH AS VARCHAR)+' ROWS ONLY';
+				
+		END
+		ELSE
+		BEGIN
+			Set @sql=	'SELECT ROW_NUMBER() OVER(ORDER BY (SELECT 1)) AS [ID],  OIL_NAME AS [NAME],OIL_FOR AS  [FOR],OIL_FOR_TYPE AS [TYPE_FOR] FROM OilDetails
+						ORDER BY ID OFFSET '+CAST(@START AS VARCHAR)+' ROWS FETCH NEXT '+CAST(@LENGTH AS VARCHAR)+' ROWS ONLY';
+		END
+	END
+	ELSE BEGIN
+		IF (@SEARCHVAL !='') 
+		BEGIN
+			Set @sql=	'SELECT  ROW_NUMBER() OVER(ORDER BY (SELECT 1)) AS [ID],  GHEE_NAME AS [NAME],GHEE_FOR AS  [FOR],GHEE_FOR_TYPE AS [TYPE_FOR] FROM GheeDetails
+						WHERE 
+						OIL_NAME LIKE ''%'+@SEARCHVAL+'%''
+						OR OIL_FOR LIKE ''%'+@SEARCHVAL+'%''
+						OR OIL_FOR_TYPE LIKE ''%'+@SEARCHVAL+'%''
+						ORDER BY ID OFFSET '+CAST(@START AS VARCHAR)+' ROWS FETCH NEXT '+CAST(@LENGTH AS VARCHAR)+' ROWS ONLY';
+				
+		END
+		ELSE
+		BEGIN
+			Set @sql=	'SELECT ROW_NUMBER() OVER(ORDER BY (SELECT 1)) AS [ID],  GHEE_NAME AS [NAME],GHEE_FOR AS  [FOR],GHEE_FOR_TYPE AS [TYPE_FOR] FROM GheeDetails
+						ORDER BY ID OFFSET '+CAST(@START AS VARCHAR)+' ROWS FETCH NEXT '+CAST(@LENGTH AS VARCHAR)+' ROWS ONLY';
+		END
+	END
+
+	print(@sql);
+
+	exec sp_executesql @sql;
+
+	SET @ERROR_MESSAGE='TRUE';
+	
+	
+	END TRY
+	BEGIN CATCH 
+		SET @ERROR_MESSAGE='FALSE';
+		DECLARE @ERRORNO NVARCHAR(20)=(SELECT ERROR_NUMBER());
+		DECLARE @ERRORLINE NVARCHAR(20)=(SELECT ERROR_LINE());
+		DECLARE @ERRORMSG NVARCHAR(MAX)=(SELECT ERROR_MESSAGE());
+		EXEC  sp_CallProcedureLog  3,'GET_ALL_OILGHEE_DETAILS',@ERRORNO,@ERRORLINE,@ERRORMSG,'' ;
+
+	END CATCH;
+
+END
+
+
+
+
+
+
+
 GO
 
 GO
@@ -4227,6 +4674,70 @@ END
 
 
 
+
+GO
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+
+-- =============================================
+-- Author:		Shashikant Shinde
+-- Create date: 10/12/2017
+-- Description:	Used to insert paitent's daily EXAMINATION DETAILS
+-- =============================================
+CREATE PROCEDURE [dbo].[INSERT_RAKTAMOKSHANA_BASIC_DETAILS]
+@CASE_ID VARCHAR(50),
+@BLEEDING_TIME NVARCHAR(50),
+@BLOOD_PRESSURE NVARCHAR(50),
+@CLOTING_TIME NVARCHAR(50),
+@HB NVARCHAR(50),
+@ERROR_MESSAGE VARCHAR(25) OUTPUT
+AS
+BEGIN
+	
+	BEGIN TRY	
+		DECLARE @CNT INT =0;
+		SET @CNT=(SELECT COUNT(*) from RAKTAMOKSHANA_BASIS_DETAILS WHERE CASE_ID=@CASE_ID)
+		IF (@CNT=0) BEGIN
+
+			INSERT INTO [dbo].RAKTAMOKSHANA_BASIS_DETAILS
+				   ([CASE_ID],
+					BLEEDING_TIME ,
+					BLOOD_PRESSURE ,
+					CLOTING_TIME ,
+					HB,
+				    [CREATED_DATE])
+			 VALUES
+				   (@CASE_ID, 
+					@BLEEDING_TIME ,
+					@BLOOD_PRESSURE ,
+					@CLOTING_TIME ,
+					@HB,
+				   GETDATE());
+				SET @ERROR_MESSAGE='TRUE';
+		END
+		ELSE  BEGIN
+			UPDATE  [dbo].RAKTAMOKSHANA_BASIS_DETAILS	 SET 		
+				    BLEEDING_TIME=@BLEEDING_TIME				  
+				   ,BLOOD_PRESSURE=@BLOOD_PRESSURE
+				   ,CLOTING_TIME=@CLOTING_TIME
+				   ,HB=@HB
+			WHERE  CASE_ID=@CASE_ID;
+			SET @ERROR_MESSAGE='TRUE';
+		END
+	END TRY
+	BEGIN CATCH 
+	PRINT(ERROR_MESSAGE ( )   );
+		SET @ERROR_MESSAGE='FALSE';
+	END CATCH;
+
+END
 
 GO
 
@@ -4652,6 +5163,67 @@ GO
 
 
 
+
+-- =============================================
+-- Author:		Shashikant Shinde
+-- Create date: 10/12/2017
+-- Description:	Used to insert paitent's daily EXAMINATION DETAILS
+-- =============================================
+CREATE PROCEDURE [dbo].[INSERT_RAKTAMOKSHANA_DIGNOSIS_DETAILS]
+@CASE_ID VARCHAR(50),
+@DAYS NVARCHAR(50),
+@QUANTITY NVARCHAR(50),
+@SYMPTOMS NVARCHAR(250),
+@ERROR_MESSAGE VARCHAR(25) OUTPUT
+AS
+BEGIN
+	
+	BEGIN TRY	
+		DECLARE @CNT INT =0;
+		SET @CNT=(SELECT COUNT(*) from RAKTAMOKSHANA_DIGNOSIS_DETAILS WHERE CASE_ID=@CASE_ID)
+		IF (@CNT=0) BEGIN
+
+			INSERT INTO [dbo].RAKTAMOKSHANA_DIGNOSIS_DETAILS
+				   ([CASE_ID],
+					[DAYS] ,
+					[QUANTITY] ,
+					[SYMPTOMS] ,
+				    [CREATED_DATE])
+			 VALUES
+				   (@CASE_ID, 
+					@DAYS ,
+					@QUANTITY ,
+					@SYMPTOMS ,
+				   GETDATE());
+				SET @ERROR_MESSAGE='TRUE';
+		END
+		ELSE  BEGIN
+			UPDATE  [dbo].RAKTAMOKSHANA_DIGNOSIS_DETAILS	 SET 		
+				    [DAYS]=@DAYS				  
+				   ,[QUANTITY]=@QUANTITY
+				   ,[SYMPTOMS]=@SYMPTOMS
+			WHERE  CASE_ID=@CASE_ID;
+			SET @ERROR_MESSAGE='TRUE';
+		END
+	END TRY
+	BEGIN CATCH 
+	PRINT(ERROR_MESSAGE ( )   );
+		SET @ERROR_MESSAGE='FALSE';
+	END CATCH;
+
+END
+
+GO
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+
 -- =============================================
 -- Author:		Shashikant Shinde
 -- Create date: 10/12/2017
@@ -4816,14 +5388,37 @@ GO
 -- Description:	Used to insert paitent's past history and family history
 -- =============================================
 CREATE PROCEDURE [dbo].[GET_ALL_MEDICINES]
-	@ERROR_MESSAGE VARCHAR(25) OUTPUT
+@START INT ,
+@LENGTH INT,
+@SEARCHVAL NVARCHAR(50),
+@ERROR_MESSAGE VARCHAR(25) OUTPUT
 AS
 BEGIN
 	
 	BEGIN TRY	
-		SELECT * FROM MedicineMaster 
-				
-		SET @ERROR_MESSAGE='TRUE';
+	
+	declare @sql nvarchar(Max)
+
+	IF (@SEARCHVAL !='') 
+	BEGIN
+		Set @sql='SELECT  * FROM MedicineMaster 
+		WHERE MEDICINE_NAME  LIKE ''%'+@SEARCHVAL+'%''
+		OR MEDICINE_TYPE  LIKE ''%'+@SEARCHVAL+'%''
+		OR MEDICINE_UNIT  LIKE ''%'+@SEARCHVAL+'%''
+		OR MEDICINE_FOR  LIKE ''%'+@SEARCHVAL+'%''
+		OR MEDICINE_FOR_TYPE  LIKE ''%'+@SEARCHVAL+'%''
+		ORDER BY ID OFFSET '+CAST(@START AS VARCHAR)+' ROWS FETCH NEXT '+CAST(@LENGTH AS VARCHAR)+' ROWS ONLY';
+	END
+	ELSE
+	BEGIN
+		Set @sql='SELECT  * FROM MedicineMaster 
+		ORDER BY ID OFFSET '+CAST(@START AS VARCHAR)+' ROWS FETCH NEXT '+CAST(@LENGTH AS VARCHAR)+' ROWS ONLY';
+	END
+	print(@sql);
+
+	exec sp_executesql @sql;
+
+	SET @ERROR_MESSAGE='TRUE';
 	
 	
 	END TRY
@@ -5038,6 +5633,118 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
+CREATE PROCEDURE [dbo].[GET_FOLLOWUP_DETAILS_BY_CASE]
+	@CASE_ID VARCHAR(50),
+ @ERROR_MESSAGE VARCHAR(205) OUTPUT
+AS
+
+BEGIN
+
+SELECT  f.ID FOLLOWUP_ID, p.Patient_ID PATIENT_ID,p.PatientName PATIENT_NAME,p.MobileNo MOBILE_NO, f.Case_ID CASE_ID,f.FollowUpFor FOLLOWUP_FOR
+,CONVERT(VARCHAR(11),f.FollowUpDate,103)  FOLLOWUP_DATE
+,CASE
+	WHEN f.FollowUpDoneDate IS NOT NULL  THEN 'COMPLETE'
+	WHEN (f.FollowUpDate<GETDATE()-1) THEN 'OVERDUE' 
+	WHEN f.FollowUpDoneDate IS NULL THEN 'PENDING' 
+	WHEN f.FollowUpDoneDate='' THEN 'PENDING'
+	ELSE 'NA' 
+END as FOLLOWUP_STATUS ,
+ISNULL(CONVERT(VARCHAR(11),f.FollowUpDoneDate,103),'') FOLLOWUP_DONE_DATE
+FROM FollowUpDetails f 
+inner join Case_Details c 
+on c.Case_ID=f.Case_ID 
+inner join Patient_Details p
+ON c.Patient_ID=p.Patient_ID
+WHERE 
+--FollowUpDate =CONVERT(DATE,GETDATE()) AND 
+f.Case_ID=@CASE_ID
+ORDER BY f.FollowUpDate ASC;
+
+END
+
+GO
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+CREATE PROCEDURE [dbo].[INSERT_FOLLOWUP_DETAILS]	
+	@OPERAION VARCHAR(10),
+	@CASE_ID NVARCHAR(25),
+	@FOLLOWUPID INT,
+    @FOLLOWUREQUIRED NVARCHAR(5),
+    @FOLLOWUDATE DATE,
+	@FOLLOWUP_FOR NVARCHAR(25),
+	@ERROR_MESSAGE NVARCHAR(250) OUTPUT
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+	BEGIN TRY
+		
+		IF(@OPERAION='I')
+		BEGIN
+			
+			INSERT INTO [dbo].[FollowUpDetails]
+           ([Case_ID]
+           ,[FollowUpRequired]
+           ,[FollowUpFor]
+           ,[FollowUpDate]
+           ,[FollowUpNumber])
+			VALUES
+           (@CASE_ID
+           ,@FOLLOWUREQUIRED
+           ,@FOLLOWUP_FOR
+           ,@FOLLOWUDATE
+           ,0);
+	
+
+			SET @ERROR_MESSAGE='TRUE';	
+		END
+		ELSE IF (@OPERAION='U')
+		BEGIN	
+
+			UPDATE  [dbo].[FollowUpDetails]
+			SET FollowUpDoneDate=GETDATE()
+			WHERE ID=@FOLLOWUPID;
+   
+			SET @ERROR_MESSAGE='TRUE';	
+		END
+		ELSE 
+		BEGIN
+			SET @ERROR_MESSAGE='FALSE';
+		END	
+	
+			
+	END TRY
+	BEGIN CATCH 
+		SET @ERROR_MESSAGE='FALSE';
+		DECLARE @ERRORNO NVARCHAR(20)=(SELECT ERROR_NUMBER());
+		DECLARE @ERRORLINE NVARCHAR(20)=(SELECT ERROR_LINE());
+		DECLARE @ERRORMSG NVARCHAR(MAX)=(SELECT ERROR_MESSAGE());
+		EXEC  sp_CallProcedureLog  6,'INSERT_FOLLOWUP_DETAILS',@ERRORNO,@ERRORLINE,@ERRORMSG,'' ;
+	END CATCH;
+	
+END
+
+
+
+
+
+
+GO
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
 
 
 
@@ -5239,7 +5946,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER TABLE [dbo].[FollowUpDetails] ADD CONSTRAINT [PK__FollowUp__3214EC27BD2A6380] PRIMARY KEY CLUSTERED ([ID]) 
+ALTER TABLE [dbo].[FollowUpDetails] ADD CONSTRAINT [PK__FollowUp__3214EC273F89F99F] PRIMARY KEY CLUSTERED ([ID]) 
 GO
 
 --Indexes of table dbo.MedicineDetails
@@ -5280,6 +5987,22 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 ALTER TABLE [dbo].[Patient_Details] ADD CONSTRAINT [PK__Patient___C1A88B593C6038DC] PRIMARY KEY CLUSTERED ([Patient_ID]) 
+GO
+
+--Indexes of table dbo.RAKTAMOKSHANA_BASIS_DETAILS
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[RAKTAMOKSHANA_BASIS_DETAILS] ADD CONSTRAINT [PK__RAKTAMOK__3214EC275999CF1C] PRIMARY KEY CLUSTERED ([ID]) 
+GO
+
+--Indexes of table dbo.RAKTAMOKSHANA_DIGNOSIS_DETAILS
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[RAKTAMOKSHANA_DIGNOSIS_DETAILS] ADD CONSTRAINT [PK__RAKTAMOK__3214EC2745F013B6] PRIMARY KEY CLUSTERED ([ID]) 
 GO
 
 --Indexes of table dbo.VAMAN_PRADHAN_KARMA_DETAILS
