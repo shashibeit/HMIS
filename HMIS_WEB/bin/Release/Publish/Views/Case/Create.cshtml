@@ -1,0 +1,812 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .disablelink {
+        pointer-events: none;
+    }
+
+    .sw-theme-arrows > ul.step-anchor > li > a, .sw-theme-arrows > ul.step-anchor > li > a:hover {
+        color: #bbb;
+        text-decoration: none;
+        padding: 25px 0 10px 45px;
+    }
+    #PatientsTable  >tbody >tr{
+        cursor: pointer;
+    }
+    
+</style>
+
+<!-- SmartWizard html -->
+<div id="smartwizard">
+    <ul>
+        <li><a href="#step-1">Patient Details<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+        <li><a href="#step-2">Nadi Obervation Details<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+        <li><a href="#step-3">Complaints and History<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+        <li><a href="#step-4">Daily Routine<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+        <li><a href="#step-5">Diet Chart<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+        <li><a href="#step-6">Complete<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+    </ul>
+    <div>
+        <div id="step-1" class="">
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Patient Details</h3>
+                            </div>
+                            <form role="form">
+                                <div class="box-body">
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputNadi">
+                                            <label for="txtPatientId">Patient Id</label>
+
+                                            <div class="input-group">
+                                                <input value="@TempData["PatientID"].ToString()" type="text" class="form-control" id="txtPatientId">
+                                                <span class="input-group-btn">
+                                                    <button id="btnSearch" type="button" class="btn btn-info ">Search</button>
+                                                    <button id="btnAdvanceSearch" type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-AdvanceSearch">Advance Search</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputNadi">
+                                            <label for="inputNadi">Name</label>
+                                            <input disabled value="@TempData["PatientName"].ToString()" type="text" class="form-control" id="txtPatientName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputNadi">
+                                            <label for="txtAddress">Address</label>
+                                            <input disabled value="@TempData["Address"].ToString()" type="text" class="form-control" id="txtAddress">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputNadi">
+                                            <label for="txtCity">City</label>
+                                            <input disabled value="@TempData["City"].ToString()" type="text" class="form-control" id="txtCity">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputNadi">
+                                            <label for="txtPin">Pin</label>
+                                            <input disabled value="@TempData["Pin"].ToString()" type="text" class="form-control" id="txtPin">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputNadi">
+                                            <label for="txtMobileNo">Mobile No</label>
+                                            <input disabled value="@TempData["MobileNo"].ToString()" type="text" class="form-control" id="txtMobileNo">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputNadi">
+                                            <label for="txtBirthDate">Birth Date</label>
+                                            <input disabled value="@TempData["BirthDate"].ToString()" type="text" class="form-control" id="txtBirthDate">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputNadi">
+                                            <label for="txtAge">Age</label>
+                                            <input disabled value="@TempData["Age"].ToString()" type="text" class="form-control" id="txtAge">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="step-2" class="">
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Observation Details</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <form role="form">
+                                <div class="box-body">
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputNadi">
+                                            <label for="inputNadi">नाडी</label>
+                                            <input value="test" type="text" class="form-control" id="inputNadi" placeholder="नाडी">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputMala">
+                                            <label for="inputMala">मल</label>
+                                            <input value="test" type="text" class="form-control" id="inputMala" placeholder="मल">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputMutra">
+                                            <label for="inputMutra">मूत्र</label>
+                                            <input value="test" type="text" class="form-control" id="inputMutra" placeholder="मूत्र">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlAvastha">
+                                            <label for="ddlAvastha">अवस्था</label>
+                                            <select id="ddlAvastha" class="form-control">
+                                                <option>साम</option>
+                                                <option>निराम</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputPrakruti">
+                                            <label for="inputPrakruti">प्रकृती</label>
+                                            <input value="test" type="text" class="form-control" id="inputPrakruti" placeholder="प्रकृती">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div style="display:none;" class="form-group form-group-inputMensturalHistory">
+                                            <label for="inputMensturalHistory">Menstrual History</label>
+                                            <input type="text" class="form-control" id="inputMensturalHistory" placeholder="Menstrual History">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="step-3" class="">
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Complaints with duration</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <form role="form">
+                                <div class="box-body">
+                                    <div class="col-md-12">
+                                        <div class="form-group form-group-inputComplaint">
+                                            <label for="inputComplaint">Complaint</label>
+                                            <input type="text" class="form-control" id="inputComplaint" placeholder="Complaint description">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group form-group-inputDuration">
+                                            <label for="inputDurationDays">Duration</label>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="inputDurationDays" onkeypress="javascript:return isNumber(event)" placeholder="Days">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="inputDurationMonths" onkeypress="javascript:return isNumber(event)" placeholder="Months">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="inputDurationYears" onkeypress="javascript:return isNumber(event)" placeholder="Years">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group form-group">
+                                            <button id="btnAddcol_complaintsToTable" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp; Add</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+
+                                        <table id="complaintsTable" class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 10px">#</th>
+                                                    <th>Complaint(s)</th>
+                                                    <th colspan="2">Duration</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Medical and Family History</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <form role="form">
+                                <div class="box-body">
+                                    <div class="col-md-12">
+                                        <div class="form-group form-group-inputPastMedicalHistory">
+                                            <label for="inputPastMedicalHistory">Past Medical History</label>
+                                            <textarea id="inputPastMedicalHistory" class="form-control" rows="3" placeholder="Past Medical History ..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group form-group-inputPastDrugsHistory">
+                                            <label for="inputPastDrugsHistory">Past Drugs History</label>
+                                            <textarea id="inputPastDrugsHistory" class="form-control" rows="3" placeholder="Past Drugs History ..."></textarea>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group form-group-inputFamilyHistory">
+                                            <label for="inputFamilyHistory">Family History</label>
+                                            <textarea id="inputFamilyHistory" class="form-control" rows="3" placeholder="Enter Family History ..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="step-4" class="">
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Daily Routine</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <form role="form">
+                                <div class="box-body">
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputWakeupTime">
+                                            <label for="inputWakeupTime">Wakeup Time</label>
+                                            <input type="text" class="form-control" id="inputWakeupTime" placeholder="Enter wakeup time in AM">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlWaterBeforeTea">
+                                            <label for="ddlWaterBeforeTea">Water Before Tea</label>
+                                            <select id="ddlWaterBeforeTea" class="form-control">
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlWaterQuantity">
+                                            <label for="ddlWaterQuantity">Quantity</label>
+                                            <select id="ddlWaterQuantity" class="form-control">
+                                                <option>Cup</option>
+                                                <option>Glass</option>
+                                                <option>Jar</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlMorningDring">
+                                            <label for="ddlMorningDring">Morning Dring</label>
+                                            <select id="ddlMorningDring" class="form-control">
+                                                <option>Tea</option>
+                                                <option>Coffee</option>
+                                                <option>Milk</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlWaterBeforeTea">
+                                            <label for="ddlWaterBeforeTea">Water State</label>
+                                            <select id="ddlWaterBeforeTea" class="form-control">
+                                                <option>Normal</option>
+                                                <option>Cold</option>
+                                                <option>Warm</option>
+                                                <option>Hot</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlDivasvaap">
+                                            <label for="ddlDivasvaap">दिवास्वाप</label>
+                                            <select id="ddlDivasvaap" class="form-control">
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlNatureofWork">
+                                            <label for="ddlNatureofWork">Nature of Work</label>
+                                            <select id="ddlNatureofWork" class="form-control">
+                                                <option>Sitting</option>
+                                                <option>Standing</option>
+                                                <option>In AC</option>
+                                                <option>Shift Duties</option>
+                                                <option>Stress</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputWorkingHours">
+                                            <label for="inputWorkingHours">Working Hours</label>
+                                            <input type="text" class="form-control" id="inputWorkingHours" placeholder="Enter working hours">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-inputBreakfast">
+                                            <label for="inputBreakfast">Breakfast</label>
+                                            <input type="text" class="form-control" id="inputBreakfast" placeholder="Breakfast menu">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="step-5" class="">
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Daily Routine</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <form role="form">
+                                <div class="box-body">
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlAahar">आहार</label>
+                                            <br />
+                                            <select id="ddlAahar" class="selectpicker" multiple>
+                                                <option>भाकरी</option>
+                                                <option>पोळी</option>
+                                                <option>भात</option>
+                                                <option>Sweet Jam</option>
+                                                <option>Sweet Fruit</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlBhaji">भाजी</label>
+                                            <br />
+                                            <select id="ddlBhaji" class="selectpicker" multiple>
+                                                <option>मेथी</option>
+                                                <option>पालक</option>
+                                                <option>करडई</option>
+                                                <option>चाकवत</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlKoshimbir">कोशिंबीर</label>
+                                            <br />
+                                            <select id="ddlKoshimbir" class="selectpicker" multiple>
+                                                <option>काकडी</option>
+                                                <option>टोमॅटो</option>
+                                                <option>गाजर</option>
+                                                <option>मुळा </option>
+                                                <option>बीट</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlAmbat">आंबट</label>
+                                            <br />
+                                            <select id="ddlAmbat" class="selectpicker" multiple>
+                                                <option>दही</option>
+                                                <option>ताक</option>
+                                                <option>लिंबु</option>
+                                                <option>चिंच</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlDal">डाळ</label>
+                                            <br />
+                                            <select id="ddlDal" class="selectpicker" multiple>
+                                                <option>मटकी</option>
+                                                <option>वाटाणा</option>
+                                                <option>हरभरा </option>
+                                                <option>तुर</option>
+                                                <option>मुग</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlChatani">चटणी</label>
+                                            <br />
+                                            <select id="ddlChatani" class="selectpicker" multiple>
+                                                <option>शेंगदाणा </option>
+                                                <option>तीळ</option>
+                                                <option>खोबरे</option>
+                                                <option>लसूण</option>
+                                                <option>जवस</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlVidahi">विदाही</label>
+                                            <br />
+                                            <select id="ddlVidahi" class="selectpicker" multiple>
+                                                <option>मिरची </option>
+                                                <option>लोणचे</option>
+                                                <option>पापड </option>
+                                                <option>कांदा मसाला </option>
+                                                <option>खरडा </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlFastFood">फास्ट फूड</label>
+                                            <br />
+                                            <select id="ddlFastFood" class="selectpicker" multiple>
+                                                <option>Pizza</option>
+                                                <option>Burger</option>
+                                                <option>Chinese</option>
+                                                <option>पाव-भाजी</option>
+                                                <option>वडा</option>
+                                                <option>समोसा </option>
+                                                <option>भेळ</option>
+                                                <option>पाणीपुरी </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlNonVeg">मांसाहार</label>
+                                            <br />
+                                            <select id="ddlNonVeg" class="selectpicker" multiple>
+                                                <option>चिकन </option>
+                                                <option>मटण</option>
+                                                <option>मासे</option>
+                                                <option>अंडे</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlColdDrink">शीत पेय</label>
+                                            <br />
+                                            <select id="ddlColdDrink" class="selectpicker" multiple>
+                                                <option>Cold Drinks </option>
+                                                <option>Ice Cream</option>
+                                                <option>Bournvita</option>
+                                                <option>गार पाणी</option>
+                                                <option>सरबत</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlPuyrishitha">पर्युषित</label>
+                                            <br />
+                                            <select id="ddlPuyrishitha" class="selectpicker" multiple>
+                                                <option>Fried Rice</option>
+                                                <option>Use of Freeze</option>
+                                                <option>पोळी - भाजी </option>
+                                                <option>पापड</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlFastingFood">उपवासाचे पदार्थ</label>
+                                            <br />
+                                            <select id="ddlFastingFood" class="selectpicker" multiple>
+                                                <option>साबुदाणा</option>
+                                                <option>वरीचा भात</option>
+                                                <option>रताळे</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlOilyFood">तेलकट पदार्थ</label>
+                                            <br />
+                                            <select id="ddlOilyFood" class="selectpicker" multiple>
+                                                <option>शेंगदाणा </option>
+                                                <option>करडई </option>
+                                                <option>सोआयबीन </option>
+                                                <option>सूर्यफूल </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlAaharNiyam">आहार नियम</label>
+                                            <br />
+                                            <select id="ddlAaharNiyam" class="selectpicker" multiple>
+                                                <option>अनशन </option>
+                                                <option>अल्पाहार </option>
+                                                <option>अध्यशन </option>
+                                                <option>अर्जिनशन</option>
+                                                <option>विषमभोजन </option>
+                                                <option>विश्र्मषण</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlOpposite">विरुद्ध</label>
+                                            <br />
+                                            <select id="ddlOpposite" class="selectpicker" multiple>
+                                                <option>शिकरण</option>
+                                                <option>चहा - बिस्कीट </option>
+                                                <option>चहा - पोळी</option>
+                                                <option>दुध - भात</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlBakery">बेकरी</label>
+                                            <br />
+                                            <select id="ddlBakery" class="selectpicker" multiple>
+                                                <option>Bread</option>
+                                                <option>Toast</option>
+                                                <option>Biscuit</option>
+                                                <option>Cake</option>
+                                                <option>Pastries</option>
+                                                <option>Choclate</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlWater">पाणी</label>
+                                            <br />
+                                            <select id="ddlWater" class="selectpicker" multiple>
+                                                <option>जेवणाआधी</option>
+                                                <option>जेवतांना</option>
+                                                <option>जेवणानंतर </option>
+                                                <option>झोपण्या आधी</option>
+                                                <option>सतत</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlFruits">फळे</label>
+                                            <br />
+                                            <select id="ddlFruits" class="selectpicker" multiple>
+                                                <option>सफरचंद</option>
+                                                <option>पेरू</option>
+                                                <option>डाळिंब</option>
+                                                <option>द्राक्षं</option>
+                                                <option>कलिंगडं</option>
+                                                <option>आंबा</option>
+                                                <option>संत्री</option>
+                                                <option>मोसंबी</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlOther">इतर</label>
+                                            <br />
+                                            <select id="ddlOther" class="selectpicker" multiple>
+                                                <option>तुप</option>
+                                                <option>लोणी</option>
+                                                <option>डालडा</option>
+                                                <option>Cheese</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlVegDharan">वेग धारण</label>
+                                            <br />
+                                            <select id="ddlVegDharan" class="selectpicker" multiple>
+                                                <option>मुद्र</option>
+                                                <option>मल </option>
+                                                <option>सुक्र </option>
+                                                <option>वमन </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlHabbit">व्यसन</label>
+                                            <br />
+                                            <select id="ddlHabbit" class="selectpicker" multiple>
+                                                <option>सुपारी </option>
+                                                <option>पान </option>
+                                                <option>तंबाकू </option>
+                                                <option>बिडी </option>
+                                                <option>मावा </option>
+                                                <option>मद्यपान</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlKoshtaExam">कोष्ट परीक्षा</label>
+                                            <br />
+                                            <select id="ddlKoshtaExam" class="selectpicker" multiple>
+                                                <option>क्रूर </option>
+                                                <option>मृदु </option>
+                                                <option>मध्य </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlSleep">निद्रा</label>
+                                            <br />
+                                            <select id="ddlSleep" class="selectpicker" multiple>
+                                                <option>प्राकृत </option>
+                                                <option>खंडित </option>
+                                                <option>अनिद्रा </option>
+                                                <option>अतिनिद्रा </option>
+                                                <option>दिवस्वाप </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group form-group-ddlAahar">
+                                            <label for="ddlOjaExam">ओज परीक्षा</label>
+                                            <br />
+                                            <select id="ddlOjaExam" class="selectpicker" multiple>
+                                                <option>ओजोव्याप्त </option>
+                                                <option>ओजोवीस्रावांश </option>
+                                                <option>ओजोक्ष्य </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="step-6" class="">
+            <section class="content">
+                <div class="row">
+                    <center>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <form role="form" class="success-message" style="display:none;">
+
+                                <div class="callout callout-success">
+                                    <center>
+                                        <h2><i class="icon fa fa-check"></i>Success!</h2>
+                                        <p>The case has been created successfully..</p>
+                                        <b><h4 id="lblInfoCaseNo"></h4></b>
+                                    </center>
+                                </div>
+                                <button id="btnDiagnosis" class="btn btn-info btn-lg"><i class="fa fa-chevron-right"></i>&nbsp;Proceed for Diagnosis</button>
+                            </form>
+
+                            <form role="form" class="error-message" style="display:none;">
+
+                                <div class="callout callout-danger">
+                                    <center>
+                                        <h2><i class="icon fa fa-check"></i>Error</h2>
+                                        <h4>Error occured while generating case</h4>
+                                    </center>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="col-md-3"></div>
+                    </center>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modal-AdvanceSearch">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Advance Search</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group ">
+                            <label for="txtSearchName">Name</label>
+                            <input type="text" id="txtSearchName" class="form-control input-sm" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group ">
+                            <label for="txtSearchContactNo">Contact No</label>
+                            <input type="text" id="txtSearchContactNo" class="form-control input-sm" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group ">
+                            <label for="txtSearchCity">City</label>
+                            <input type="text" id="txtSearchCity" class="form-control input-sm" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <table id="PatientsTable" class="table table-hover table-striped">
+                            <thead>
+                                <tr class="active">
+                                    <th style="width: 100px">Patinet ID</th>
+                                    <th style="width: 200px">Name</th>
+                                    <th style="width: 100px">Contact No</th>
+                                    <th style="width: 100px">City</th>
+                                    <th style="width: 100px">Pin</th>                                   
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<script src="~/Content/js/appjs/Case.js"></script>
+

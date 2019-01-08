@@ -1,0 +1,251 @@
+﻿
+@{
+    ViewBag.Title = "विरेचन";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .disablelink {
+        pointer-events: none;
+    }
+
+    .sw-theme-arrows > ul.step-anchor > li > a, .sw-theme-arrows > ul.step-anchor > li > a:hover {
+        color: #bbb;
+        text-decoration: none;
+        padding: 25px 0 10px 45px;
+    }
+</style>
+
+<!-- SmartWizard html -->
+<div id="smartwizard">
+    <ul>
+        <li><a href="#step-1">विरेचन माहिती<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+        <li><a href="#step-2">पूर्वकर्म<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+        <li><a href="#step-3">प्रधानकर्म<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+        <li><a href="#step-4">पडताळणी<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+    </ul>
+    <div>
+        <div id="step-1" class="">
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group form-group-inputNadi">
+                            <label for="txtPatientId">Patient Id</label>
+                            <input disabled type="text" class="form-control" id="txtPatientId">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group form-group-inputNadi">
+                            <label for="txtPatientId">Case Id</label>
+                            <input disabled type="text" class="form-control" id="txtCaseID">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group form-group-inputNadi">
+                            <label for="inputNadi">Name</label>
+                            <input disabled type="text" class="form-control" id="txtPatientName">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group form-group-inputNadi">
+                            <label for="txtCity">City</label>
+                            <input disabled type="text" class="form-control" id="txtCity">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group form-group-inputNadi">
+                            <label for="txtMobileNo">Mobile No</label>
+                            <input disabled type="text" class="form-control" id="txtMobileNo">
+                        </div>
+                    </div>                   
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="alert alert-danger followupDateError" style="display:none;">
+                            <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                            <label id="lblerr" class="has-error"> </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </section>
+        </div>
+        <div id="step-2" class="">
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-txtVirechanaDays">
+                                            <label for="txtVirechanaDays">दिवस</label>
+                                            <input id="txtVirechanaDays" type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group form-group">
+                                            <br />
+                                            <button id="btnAddRows" class="btn btn-primary "><i class="fa fa-plus"></i>&nbsp; Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table id="VirechanaTable" class="table table-bordered">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th style="width: 10px">क्रं</th>
+                                                    <th style="width: 150px">तारीख</th>
+                                                    <th style="width: 100px">तेल / तुप</th>
+                                                    <th style="width: 150px">नाव</th>
+                                                    <th style="width: 100px">डोस (ग्रॉम)</th>
+                                                    <th>मसाज</th>
+                                                    <th style="width: 150px">मसाज तेल</th>
+                                                    <th>लक्षणे</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <div id="step-3" class="">
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <table id="" class="table table-bordered">
+                            @*<thead>
+                                    <tr>
+                                        <th >तारीख</th>
+                                        <th style="width: 150px">तेल / तुप</th>
+                                        <th style="width: 100px">लक्षणे</th>
+                                    </tr>
+                                </thead>*@
+                            <tbody>
+
+                                <tr>
+                                    <td style="width: 150px"><label for="txtPradhanKarmaDate">तारीख</label></td>
+                                    <td style="width: 150px">
+                                        <div class="input-group">
+                                            <input id="txtPradhanKarmaDate" type="text" class="form-control input-sm datepicker">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 150px"><label for="txtMedicineName">औषधाचे नाव</label></td>
+                                    <td style="width: 150px">
+                                        <input type="text" id="txtMedicineName" class="form-control input-sm" />
+                                    </td>
+                                    <td style="width: 150px"> <input id="txtMedicineQty" placeholder="औषधाचे प्रमाण" type="text" class="form-control input-sm "></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 150px"><label for="txtSymptoms">विरेचन वेग</label></td>
+                                    <td style="width: 150px">
+                                        <input type="text" id="txtVirechanaVeg" class="form-control input-sm" />
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td style="width: 150px"><label for="txtSymptoms">लक्षणे</label></td>
+                                    <td style="width: 150px">
+                                        <input type="text" id="txtSymptoms" class="form-control input-sm" />
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="step-4" class="">
+            <section class="content">
+                <div class="row">
+                    <center>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <form role="form" class="success-message" style="display:none;">
+
+                                <div class="callout callout-success">
+                                    <center>
+                                        <h2><i class="icon fa fa-check"></i>Success!</h2>
+                                        <p>The Virechana Details has been saved successfully..</p>
+                                        <b><h4 id="lblInfoCaseNo"></h4></b>
+                                    </center>
+                                </div>
+                                <button id="btnNewCase" class="btn btn-info"><i class="fa fa-chevron-right"></i>&nbsp;New Case</button>
+                                <button id="btnPrintPrescription " class="btn btn-success hidden"><i class="fa fa-chevron-right"></i>&nbsp;Print Prescription </button>
+                            </form>
+
+                            <form role="form" class="error-message" style="display:none;">
+
+                                <div class="callout callout-danger">
+                                    <center>
+                                        <h2><i class="icon fa fa-check"></i>Error</h2>
+                                        <h4>Error occured while saving Details</h4>
+                                    </center>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="col-md-3"></div>
+                    </center>
+                </div>
+
+            </section>
+        </div>        
+    </div>
+</div>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            // Step show event
+            $("#smartwizard").on("showStep", function (e, anchorObject, stepNumber, stepDirection, stepPosition) {
+                //alert("You are on step "+stepNumber+" now");
+                if (stepPosition === 'first') {
+                    $("#prev-btn").addClass('disabled');
+                } else if (stepPosition === 'final') {
+                    $("#next-btn").addClass('disabled');
+                } else {
+                    $("#prev-btn").removeClass('disabled');
+                    $("#next-btn").removeClass('disabled');
+                }
+            });
+
+
+            // Smart Wizard
+            $('#smartwizard').smartWizard({
+                selected: 0,
+                theme: 'arrows',
+                transitionEffect: 'fade',
+                showStepURLhash: true,
+                toolbarSettings: {
+                    toolbarPosition: 'bottom',
+                    toolbarButtonPosition: 'end'
+                }
+            });
+
+        });
+
+    </script>
+
+    <script src="~/Content/js/appjs/Virechana.js"></script>

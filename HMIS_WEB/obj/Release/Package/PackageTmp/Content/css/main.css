@@ -1,0 +1,40 @@
+﻿#BastiTable tbody tr:nth-child(even) {
+    background-color: #f2dede;
+}
+
+#BastiTable tbody tr:nth-child(odd) {
+    background-color: #dff0d8;
+}
+
+#VirechanaTable tbody tr:nth-child(even) {
+    background-color: #f2dede;
+}
+
+#VirechanaTable tbody tr:nth-child(odd) {
+    background-color: #dff0d8;
+}
+
+
+#VamanTable tbody tr:nth-child(even) {
+    background-color: #f2dede;
+}
+
+#VamanTable tbody tr:nth-child(odd) {
+    background-color: #dff0d8;
+}
+
+#NasyaTable tbody tr:nth-child(even) {
+    background-color: #f2dede;
+}
+
+#NasyaTable tbody tr:nth-child(odd) {
+    background-color: #dff0d8;
+}
+
+#RaktaMokshanaTable tbody tr:nth-child(even) {
+    background-color: #f2dede;
+}
+
+#RaktaMokshanaTable tbody tr:nth-child(odd) {
+    background-color: #dff0d8;
+}

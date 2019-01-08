@@ -1,0 +1,65 @@
+﻿@using WebHelpers.Mvc5
+<aside class="main-sidebar">
+    <section class="sidebar">
+        @* BEGIN Search *@
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        @* END Search *@
+        @* BEGIN Menu *@
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="">
+                <a href="~/Home/Dashboard">
+                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    <span>Patient</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="~/Patient/NewPatient"><i class="fa fa-circle-o"></i> New</a></li>
+                    <li><a href="~/Case/Create?mode=update"><i class="fa fa-circle-o"></i> Edit</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    <span>Case</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="~/Case/Create?mode=new"><i class="fa fa-circle-o"></i> New</a></li>
+                    <li><a href="~/Case/Create?mode=update"><i class="fa fa-circle-o"></i> Edit</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    <span>Master</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="~/Master/MedicineMaster"><i class="fa fa-circle-o"></i> Medicine Master</a></li>
+                    <li><a href="~/Case/Create?mode=update"><i class="fa fa-circle-o"></i> Edit</a></li>
+                </ul>
+            </li>
+        </ul>
+        @* END Menu *@
+    </section>
+</aside>

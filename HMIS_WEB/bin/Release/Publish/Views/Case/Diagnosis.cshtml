@@ -1,0 +1,268 @@
+﻿
+@{
+    ViewBag.Title = "Diagnosis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+
+<!-- SmartWizard html -->
+<div id="smartwizard">
+    <ul>
+        <li><a href="#step-1">रूग्ण परिक्षण<br /><small>Fill out the patients personal details.</small></a></li>
+        <li><a href="#step-2">उपचार निवड<br /><small>Complaints and past medical history.</small></a></li>
+    </ul>
+    <div>
+        <div id="step-1" class="">
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">दशविध</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <form role="form">
+                                <div class="box-body">
+                                    <div class="col-md-6">
+                                        <div class="form-group form-group-ddlRugnaBal">
+                                            <label for="ddlRugnaBal">रुग्णबल</label>
+                                            <select id="ddlRugnaBal" class="form-control selectpicker" multiple>
+                                                <option>प्रवर</option>
+                                                <option>मध्य</option>
+                                                <option>अल्प</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group form-group-ddlVyadhiBal">
+                                            <label for="ddlVyadhiBal">व्याधीबल</label>
+                                            <select id="ddlVyadhiBal" class="form-control selectpicker" multiple>
+                                                <option>प्रवर</option>
+                                                <option>मध्य</option>
+                                                <option>अल्प</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="box box-info">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">त्रिदोष</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <form role="form">
+                                <div class="box-body">
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlVaat">
+                                            <label for="ddlVaat">वात</label>
+                                            <select id="ddlVaat" class="form-control selectpicker" multiple>
+                                                <option>प्राण</option>
+                                                <option>उदान</option>
+                                                <option>व्यान</option>
+                                                <option>समान</option>
+                                                <option>अपान</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlPitta">
+                                            <label for="ddlPitta">पित्त</label>
+                                            <select id="ddlPitta" class="form-control selectpicker" multiple>
+                                                <option>पाचक</option>
+                                                <option>रंजक</option>
+                                                <option>साधक</option>
+                                                <option>आलोचक</option>
+                                                <option>भ्राजक</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlCough">
+                                            <label for="ddlCough">कफ</label>
+                                            <select id="ddlCough" class="form-control selectpicker" multiple>
+                                                <option>क्लेदक</option>
+                                                <option>अवलंबक</option>
+                                                <option>बोधक</option>
+                                                <option>तर्पक</option>
+                                                <option>साधक</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="box box-danger">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">दोष</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <form role="form">
+                                <div class="box-body">
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlDosha">
+                                            <label for="ddlDosha">दोष</label>
+                                            <select id="ddlDosha" class="form-control selectpicker" multiple>
+                                                <option>रस</option>
+                                                <option>रक्त </option>
+                                                <option>मास </option>
+                                                <option>मेध </option>
+                                                <option>अस्थी </option>
+                                                <option>मज्जा </option>
+                                                <option>शुक्र </option>
+                                                <option>रज </option>
+                                                <option>स्तन्य </option>
+                                                <option>कंडरा </option>
+                                                <option>सीरा </option>
+                                                <option>वंसा </option>
+                                                <option>त्वचा </option>
+                                                <option>स्नायु </option>
+                                                <option>संधी </option>
+                                                <option>दंत </option>
+                                                <option>केश </option>
+                                                <option>नखं </option>
+                                                <option>मुत्र </option>
+                                                <option>पुरीष </option>
+                                                <option>स्वेद </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlStrotas">
+                                            <label for="ddlStrotas">स्त्रोतस</label>
+                                            <select id="ddlStrotas" class="form-control selectpicker" multiple>
+                                                <option>प्राण </option>
+                                                <option>अन्न </option>
+                                                <option>उदक </option>
+                                                <option>रस </option>
+                                                <option>रक्त </option>
+                                                <option>मास </option>
+                                                <option>मेध </option>
+                                                <option>अस्थी </option>
+                                                <option>मज्जा </option>
+                                                <option>शुक्र </option>
+                                                <option>रज </option>
+                                                <option>स्तन्य </option>
+                                                <option>मुत्र </option>
+                                                <option>पुरीष</option>
+                                                <option>स्वेद</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlAvastha">
+                                            <label for="ddlAvastha">अवस्था</label>
+                                            <select id="ddlAvastha" class="form-control selectpicker">
+                                                <option>साम</option>
+                                                <option>निराम</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlJathraAgni">
+                                            <label for="ddlJathraAgni">जठराअग्नी</label>
+                                            <select id="ddlJathraAgni" class="form-control selectpicker" multiple>
+                                                <option>विषम</option>
+                                                <option>तीक्ष्ण </option>
+                                                <option>मंद </option>
+                                                <option>सम </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlDwhtaAgni">
+                                            <label for="ddlDwhtaAgni">ध्त्वाआग्नि</label>
+                                            <select id="ddlDwhtaAgni" class="form-control selectpicker" multiple>
+                                                <option>विषम</option>
+                                                <option>तीक्ष्ण </option>
+                                                <option>मंद </option>
+                                                <option>सम </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlMahaBhutaAgni">
+                                            <label for="ddlMahaBhutaAgni">महाभूताअग्नि</label>
+                                            <select id="ddlMahaBhutaAgni" class="form-control selectpicker" multiple>
+                                                <option>विषम</option>
+                                                <option>तीक्ष्ण </option>
+                                                <option>मंद </option>
+                                                <option>सम </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group form-group-inputVyahiNidan">
+                                            <label for="inputVyahiNidan">व्याधीनिदान</label>
+                                            <textarea id="inputVyahiNidan" class="form-control" rows="3" placeholder="Past Drugs History ..."></textarea>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="step-2" class="">
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">उपचार</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <form role="form">
+                                <div class="box-body">
+                                    <div class="col-md-12">
+                                        <center>
+                                            <div class="form-group">
+                                                <button id="btnMedicine" class="btn btn-info btn-lg"><i class=" fa fa-stethoscope "></i>&nbsp;&nbsp;औषधे</button>
+                                                <a id="btnMassage" class="btn btn-danger btn-lg"><i class="fa fa-plus-square"></i>&nbsp;&nbsp;मसाज</a>
+                                                <a id="btnPanchakarma" class="btn btn-success btn-lg"><i class="fa fa-medkit "></i>&nbsp;&nbsp;पंचकर्म</a>
+                                            </div>
+                                        </center>
+                                    </div>
+
+                                    <div class="col-md-12 panchakarma-types" style="display:none;">
+                                        <center>
+                                            <label>पंचकर्माचा प्रकार</label>
+                                            <div class="form-group">
+                                                <button id="btnVaman" class="btn btn-default btn-lg"><i class=" fa fa-medkit "></i>&nbsp;&nbsp;वमन</button>
+                                                <a id="btnVirechana" class="btn btn-default btn-lg"><i class="fa fa-medkit"></i>&nbsp;&nbsp;विरेचन</a>
+                                                <a id="btnBasti" class="btn btn-default btn-lg"><i class="fa fa-medkit"></i>&nbsp;&nbsp;बस्ती</a>
+                                                <a id="btnNasya" class="btn btn-default btn-lg"><i class="fa fa-medkit"></i>&nbsp;&nbsp;नस्य</a>
+                                                <a id="btnRaktaMokshana" class="btn btn-default btn-lg"><i class="fa fa-medkit "></i>&nbsp;&nbsp;रक्तमोक्षण</a>
+                                            </div>
+                                        </center>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+</div>
+<script src="~/Content/js/appjs/Diagnosis.js"></script>

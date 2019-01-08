@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SammyakModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PatientDetails">
+    <Key>
+      <PropertyRef Name="CASE_ID" />
+    </Key>
+    <Property Name="CASE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="250" />
+    <Property Name="ADDRESS" Type="nvarchar" MaxLength="250" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="250" />
+    <Property Name="STATE" Type="nvarchar" MaxLength="250" />
+    <Property Name="PIN_CODE" Type="numeric" Precision="6" Scale="0" />
+    <Property Name="MOBILE" Type="numeric" Precision="12" Scale="0" />
+    <Property Name="PHONE_NO" Type="numeric" Precision="12" Scale="0" />
+    <Property Name="EMAIL_ID" Type="nvarchar" MaxLength="100" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="AGE" Type="int" />
+    <Property Name="GENDER" Type="nvarchar" MaxLength="1" />
+    <Property Name="MARITAL_STATUS" Type="nvarchar" MaxLength="10" />
+    <Property Name="NADI" Type="nvarchar" MaxLength="25" />
+    <Property Name="MALA" Type="nvarchar" MaxLength="25" />
+    <Property Name="MUTRA" Type="nvarchar" MaxLength="25" />
+    <Property Name="AVASHTA" Type="nvarchar" MaxLength="25" />
+    <Property Name="MENSTRUAL_HISTORY" Type="nvarchar" MaxLength="250" />
+    <Property Name="CONCEPTION_PERIOD" Type="nvarchar" MaxLength="25" />
+    <Property Name="PRAKURTI" Type="nvarchar" MaxLength="250" />
+    <Property Name="NADI_LANG" Type="nvarchar" MaxLength="2" />
+    <Property Name="MALA_LANG" Type="nvarchar" MaxLength="2" />
+    <Property Name="MUTRA_LANG" Type="nvarchar" MaxLength="2" />
+    <Property Name="PRAKURTI_LANG" Type="nvarchar" MaxLength="2" />
+    <Property Name="CREATED_DATE" Type="date" />
+  </EntityType>
+  <EntityContainer Name="SammyakModelStoreContainer">
+    <EntitySet Name="PatientDetails" EntityType="Self.PatientDetails" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

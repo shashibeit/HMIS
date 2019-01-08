@@ -1,0 +1,327 @@
+﻿
+@{
+    ViewBag.Title = "Medicine";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<style>
+    .disablelink {
+        pointer-events: none;
+    }
+
+    .sw-theme-arrows > ul.step-anchor > li > a, .sw-theme-arrows > ul.step-anchor > li > a:hover {
+        color: #bbb;
+        text-decoration: none;
+        padding: 25px 0 10px 45px;
+    }
+</style>
+
+<!-- SmartWizard html -->
+<div id="smartwizard">
+    <ul>
+        <li><a href="#step-1">औषध निवड<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+        <li><a href="#step-2">कढ्याची माहीती<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+        <li><a href="#step-3">औषध चिकित्सा<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+        <li><a href="#step-4">फॉलोअप घेणे<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+        <li><a href="#step-5">पडताळणी<br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></a></li>
+    </ul>
+    <div>
+        <div id="step-1" class="">
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+
+                        <div class="box box-primary">
+
+                            <div class="box-body medicine-box-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-ddlMedicine">
+                                            <label for="ddlMedicine">औषधाचे नाव</label>
+                                            <select id="ddlMedicine" class="form-control select2" data-placeholder="औषधाचे नाव"
+                                                    style="width: 100%;">                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group form-group-ddlMedicineType">
+                                            <label for="ddlMedicineType">औषधाचा प्रकार</label>
+
+                                            <select id="ddlMedicineType" class="form-control">
+                                                <option>चुर्ण </option>
+                                                <option>गोळी </option>
+                                                <option>औषधी तेल </option>
+                                                <option>औषधी तुप </option>
+                                                <option>क्षीरपाक</option>
+                                                <option>सिद्धजल</option>
+                                                <option>सीरप</option>
+                                                <option>ईतर</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group form-group-ddlForKadha">
+                                            <label for="ddlForKadha">काढ्यासाठी वापरणे</label>
+                                            <select id="ddlForKadha" class="form-control">
+                                                <option value="नाही">नाही </option>
+                                                <option value="होय">होय </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group form-group-txtKadhaNo">
+                                            <label for="txtKadhaNo">काढा क्रं</label>
+                                            <input id="txtKadhaNo" type="text" class="form-control" onkeypress="javascript:return isNumber(event)" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group form-group">
+                                            <br />
+                                            <button id="btnAddMedicineToTable" class="btn btn-primary "><i class="fa fa-plus"></i>&nbsp; Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <table id="MedicineTable" class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 10px">क्रं</th>
+                                                    <th>औषधाचे नाव</th>
+                                                    <th>औषधाचा प्रकार</th>
+                                                    <th>काढ्यासाठी वापरणे</th>
+                                                    <th>काढा क्रं</th>
+                                                    <th>Operations</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <div id="step-2" class="">
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+
+                        <div class="box box-primary">
+
+                            <div class="box-body medicine-box-body">
+
+                                <div class="row">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-6">
+
+                                        <table id="KadhaTable" class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>काढा क्रं</th>
+                                                    <th>औषधाचे नाव</th>
+                                                    <th>प्रमाण</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+
+                                    </div>
+                                    <div class="col-md-3"></div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <div id="step-3" class="">
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+
+                        <div class="box box-primary">
+
+                            <div class="box-body medicine-box-body">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <table id="MedicineInfoTable" class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>क्रं</th>
+                                                    <th>औषध</th>
+                                                    <th>कालावाधी</th>
+                                                    <th>किती वेळा घ्यायचे</th>
+                                                    <th>कधी घ्यायचे</th>
+                                                    <th>कश्यासोबत घ्यायचे</th>
+                                                    <th>प्रमाण</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <div id="step-4" class="">
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group form-group-inputNadi">
+                            <label for="txtPatientId">Patient Id</label>
+                            <input disabled type="text" class="form-control" id="txtPatientId">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group form-group-inputNadi">
+                            <label for="txtPatientId">Case Id</label>
+                            <input disabled type="text" class="form-control" id="txtCaseID">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group form-group-inputNadi">
+                            <label for="inputNadi">Name</label>
+                            <input disabled type="text" class="form-control" id="txtPatientName">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group form-group-inputNadi">
+                            <label for="txtCity">City</label>
+                            <input disabled type="text" class="form-control" id="txtCity">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group form-group-inputNadi">
+                            <label for="txtMobileNo">Mobile No</label>
+                            <input disabled type="text" class="form-control" id="txtMobileNo">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group form-group-ddlFollowupRequired">
+                            <label for="ddlFollowupRequired">Followup Required</label>
+                            <select id="ddlFollowupRequired" class="form-control">
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group form-group-ddlFollowupDate">
+                            <label for="ddlFollowupDate">Followup Date</label>
+                            <input type="text" class="form-control" id="ddlFollowupDate" placeholder="">
+
+                        </div>
+                    </div>
+                </div>               
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="alert alert-danger followupDateError" style="display:none;">
+                            <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                            <label id="lblerr" class="has-error"> </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </section>
+        </div>
+        <div id="step-5" class="">
+            <section class="content">
+                <div class="row">
+                    <center>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <form role="form" class="success-message" style="display:none;">
+
+                                <div class="callout callout-success">
+                                    <center>
+                                        <h2><i class="icon fa fa-check"></i>Success!</h2>
+                                        <p>The Medicines Details has been saved successfully..</p>
+                                        <b><h4 id="lblInfoCaseNo"></h4></b>
+                                    </center>
+                                </div>
+                                <button id="btnNewCase" class="btn btn-info"><i class="fa fa-chevron-right"></i>&nbsp;New Case</button>
+                                <button  id="btnPrintPrescription " class="btn btn-success hidden"><i class="fa fa-chevron-right"></i>&nbsp;Print Prescription </button>
+                            </form>
+
+                            <form role="form" class="error-message" style="display:none;">
+
+                                <div class="callout callout-danger">
+                                    <center>
+                                        <h2><i class="icon fa fa-check"></i>Error</h2>
+                                        <h4>Error occured while saving Details</h4>
+                                    </center>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="col-md-3"></div>
+                    </center>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            // Step show event
+            $("#smartwizard").on("showStep", function (e, anchorObject, stepNumber, stepDirection, stepPosition) {
+                //alert("You are on step "+stepNumber+" now");
+                if (stepPosition === 'first') {
+                    $("#prev-btn").addClass('disabled');
+                } else if (stepPosition === 'final') {
+                    $("#next-btn").addClass('disabled');
+                } else {
+                    $("#prev-btn").removeClass('disabled');
+                    $("#next-btn").removeClass('disabled');
+                }
+            });
+
+
+            // Smart Wizard
+            $('#smartwizard').smartWizard({
+                selected: 0,
+                theme: 'arrows',
+                transitionEffect: 'fade',
+                showStepURLhash: true,
+                toolbarSettings: {
+                    toolbarPosition: 'bottom',
+                    toolbarButtonPosition: 'end'
+                }
+            });
+
+        });
+
+    </script>
+    <script src="~/Content/js/appjs/Medicine.js"></script>

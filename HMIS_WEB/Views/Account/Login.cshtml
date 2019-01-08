@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+<style>
+</style>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="#" style="color:#FFF; font-family:'Segoe UI';font-size:22px;"><b>सम्यक आयुर्वेद व पंचकर्म चिकित्सा केंद्र</b></a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+            {
+                <div class="form-group has-feedback">
+                    @Html.TextBox("txtUserName", "admin", new { @class = "form-control", @placeholder = "username" })
+
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.Password("txtPassword", "admin", new { @class = "form-control", @placeholder = "password" })
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <br />
+                <div class="row">
+                    @if (TempData["loginpass"] != null && TempData["loginpass"].ToString() == "False")
+                    {
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            Please check your user name password is corrent
+
+                        </div>
+                    }
+
+                </div>
+            }
+            <!-- /.social-auth-links -->
+            <a href="#">I forgot my password</a><br>
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <!-- /.login-box -->
+</body>

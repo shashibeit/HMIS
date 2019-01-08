@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SammyakModelStoreContainer" CdmEntityContainer="SammyakEntities">
+    <EntitySetMapping Name="PatientDetails">
+      <EntityTypeMapping TypeName="SammyakModel.PatientDetail">
+        <MappingFragment StoreEntitySet="PatientDetails">
+          <ScalarProperty Name="CASE_ID" ColumnName="CASE_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="PIN_CODE" ColumnName="PIN_CODE" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="PHONE_NO" ColumnName="PHONE_NO" />
+          <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="AGE" ColumnName="AGE" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="MARITAL_STATUS" ColumnName="MARITAL_STATUS" />
+          <ScalarProperty Name="NADI" ColumnName="NADI" />
+          <ScalarProperty Name="MALA" ColumnName="MALA" />
+          <ScalarProperty Name="MUTRA" ColumnName="MUTRA" />
+          <ScalarProperty Name="AVASHTA" ColumnName="AVASHTA" />
+          <ScalarProperty Name="MENSTRUAL_HISTORY" ColumnName="MENSTRUAL_HISTORY" />
+          <ScalarProperty Name="CONCEPTION_PERIOD" ColumnName="CONCEPTION_PERIOD" />
+          <ScalarProperty Name="PRAKURTI" ColumnName="PRAKURTI" />
+          <ScalarProperty Name="NADI_LANG" ColumnName="NADI_LANG" />
+          <ScalarProperty Name="MALA_LANG" ColumnName="MALA_LANG" />
+          <ScalarProperty Name="MUTRA_LANG" ColumnName="MUTRA_LANG" />
+          <ScalarProperty Name="PRAKURTI_LANG" ColumnName="PRAKURTI_LANG" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

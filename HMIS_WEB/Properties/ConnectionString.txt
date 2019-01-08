@@ -1,0 +1,1 @@
+﻿Data Source=DESKTOP-8U9NOMR;Initial Catalog=SamyakDB;User Id=SamyakAdmin; Password=Samyak123;

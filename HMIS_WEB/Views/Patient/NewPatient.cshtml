@@ -1,0 +1,351 @@
+﻿
+@{
+    ViewBag.Title = "Add New Patient";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using HMIS_WEB.Models.Account
+@model LoginModel
+
+<section class="content-header">
+    <!-- <div class="container-fluid">
+         <div class="row mb-2">
+             <div class="col-sm-6">
+                 <h1></h1>
+             </div>
+         </div>
+     </div> /.container-fluid -->
+
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Personal Details</h3>
+         </div>
+      
+
+        <!-- /.box-header -->
+        <!-- form start -->
+        @if (TempData["patientCreated"] == null)
+        {
+            using (Html.BeginForm("NewPatient", "Patient", FormMethod.Post, new { id = "patientForm" }))
+            {
+                <div class="box-body">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputPatientName">
+                            <label for="inputPatientName">Patient Name</label>
+                            @Html.TextBox("inputPatientName", "test", new { @class = "form-control", @placeholder = "Patient name" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputAddress">
+                            <label for="inputAddress">Address</label>
+                            @Html.TextBox("inputAddress", "test", new { @class = "form-control", @placeholder = "Address" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputCity">
+                            <label for="inputCity">City</label>
+                            @Html.TextBox("inputCity", "test", new { @class = "form-control", @placeholder = "City" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputPin">
+                            <label for="inputPin">Pin</label>
+                            @Html.TextBox("inputPin", "416108", new { @class = "form-control", @onkeypress = "javascript:return isNumber(event)", @placeholder = "Pin" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputBirthDate">
+                            <label for="inputBirthDate">Birth Date</label>
+                            @Html.TextBox("inputBirthDate", "13/06/1991", new { @class = "form-control", @placeholder = "Birth Date" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputAge">
+                            <label for="inputAge">Age</label>
+                            @Html.TextBox("inputAge", "27", new { @class = "form-control", @onkeypress = "javascript:return isNumber(event)", @placeholder = "Age" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputConceptionPeriod">
+                            <label for="inputConceptionPeriod">Conception Period</label>
+                            @Html.TextBox("inputConceptionPeriod", "Septmber", new { @class = "form-control", @placeholder = "Conception Period" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-ddlGender">
+                            <label for="ddlGender">Gender</label>
+                            @Html.DropDownList("ddlGender", new SelectList(Enum.GetValues(typeof(Gender))), null, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputMobileNo">
+                            <label for="inputMobileNo">Mobile No</label>
+                            @Html.TextBox("inputMobileNo", "9890232469", new { @class = "form-control", @onkeypress = "javascript:return isNumber(event)", @placeholder = "Mobile No" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputPhoneNo">
+                            <label for="inputPhoneNo">Phone No</label>
+                            @Html.TextBox("inputPhoneNo", "9890232469", new { @class = "form-control", @onkeypress = "javascript:return isNumber(event)", @placeholder = "Phone No" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputNadi">
+                            <label for="inputNadi">नाडी</label>
+                            @Html.TextBox("inputNadi", "test", new { @class = "form-control", @placeholder = "नाडी" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputMala">
+                            <label for="inputMala">मल</label>
+                            @Html.TextBox("inputMala", "test", new { @class = "form-control", @placeholder = "मल" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputMutra">
+                            <label for="inputMutra">मूत्र</label>
+                            @Html.TextBox("inputMutra", "test", new { @class = "form-control", @placeholder = "मूत्र" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-ddlAvastha">
+                            <label for="ddlAvastha">अवस्था</label>
+                            @Html.DropDownList("ddlAvastha", new SelectList(Enum.GetValues(typeof(Avastha))), null, new { @class = "form-control" })
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-inputPrakruti">
+                            <label for="inputPrakruti">प्रकृती</label>
+                            @Html.TextBox("inputPrakruti", "test", new { @class = "form-control", @placeholder = "प्रकृती" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div style="display:none;" class="form-group form-group-inputMensturalHistory">
+                            <label for="inputMensturalHistory">Menstrual History</label>
+                            @Html.TextBox("inputMensturalHistory", null, new { @class = "form-control", @placeholder = "Menstrual History" })
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i>&nbsp; Save</button>
+                </div>
+            }
+        }
+
+
+        @using (Html.BeginForm("Create", "Case", FormMethod.Post, new { id = "createCaseForm" }))
+        {
+            if (TempData["patientCreated"] != null && TempData["patientCreated"].ToString() == "True")
+            {
+                <div class="box-body">
+                    <div class="row">
+                        <center>
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <div class="callout callout-success">
+                                    <center>
+                                        <h4><i class="icon fa fa-check"></i>Success!</h4>
+                                        <p>The patient details has been saved successfully...</p>
+                                    </center>
+                                </div>
+                                <button class="btn btn-info btn-lg"><i class="fa fa-chevron-right"></i>&nbsp;Proceed to case creation</button>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </center>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+
+</section>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#inputBirthDate').datepicker({
+            autoclose: true,
+            format: 'dd/mm/yyyy',
+        }).datepicker('setDate', 'today');
+
+        $("#inputBirthDate").change(function () {
+            var parts = $("#inputBirthDate").val().split('/');
+            var d1 = new Date(parts[2], parts[1] - 1, parts[0]);
+            var age = getAge(d1);
+
+            //to calculate conception period
+            var d2 = addMonths(d1, -9);
+
+
+            var conceptionPeriod = monthNames[d2.getMonth()];
+            $("#inputAge").val(age);
+            $("#inputConceptionPeriod").val(conceptionPeriod);
+        });
+
+        $("#inputPatientName").focusin(function () {
+            $(".patient-name-form-group").removeClass("has-success").removeClass("has-error");
+        });
+
+        $("#inputPatientName").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#inputAddress").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#inputCity").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#inputPin").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#inputBirthDate").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#inputAge").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#inputBirthDate").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+
+        $("#inputAge").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#inputConceptionPeriod").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#ddlGender").change(function () {
+            if ($(this).val() == "Female") {
+                $(".form-group-inputMensturalHistory").show();
+            }
+            else {
+                $(".form-group-inputMensturalHistory").hide();
+            }
+        });
+        $("#inputMobileNo").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#inputNadi").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#inputMala").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#inputMutra").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#ddlAvastha").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+        $("#inputPrakruti").blur(function () {
+            var elem = $(this);
+            validateInput(elem);
+        });
+
+        $('#patientForm').submit(function () {
+            if (validatePersonalDetails()) {
+                return true
+            }
+            else {
+                return false;
+            }
+        });
+
+    });
+
+    function validateInput(elem) {
+        if (elem.val() == "") {
+            $(".form-group-" + elem.attr('id')).removeClass("has-success").addClass("has-error");
+            return false;
+        } else {
+            $(".form-group-" + elem.attr('id')).removeClass("has-error").addClass("has-success");
+            return true;
+        }
+    }
+
+
+    function calculateAge(elem) {
+        var age = getAge(elem.value);
+        $("#inputAge").val(age);
+    }
+
+
+    function validatePersonalDetails() {
+        var flag = false;
+        if (validateInput($("#inputPatientName")))
+            flag = true;
+        else
+            return;
+       
+        if (validateInput($("#inputAddress")))
+            flag = true;
+        else
+            return;
+        if (validateInput($("#inputCity")))
+            flag = true;
+        else
+            return;
+        if (validateInput($("#inputBirthDate")))
+            flag = true;
+        else
+            return;
+        if (validateInput($("#inputAge")))
+            flag = true;
+        else
+            return;
+        if (validateInput($("#inputConceptionPeriod")))
+            flag = true;
+        else
+            return;
+        if (validateInput($("#ddlGender")))
+            flag = true;
+        else
+            return;
+        if (validateInput($("#inputNadi")))
+            flag = true;
+        else
+            return;
+        if (validateInput($("#inputMala")))
+            flag = true;
+        else
+            return;
+        if (validateInput($("#inputMutra")))
+            flag = true;
+        else
+            return;
+        if (validateInput($("#ddlAvastha")))
+            flag = true;
+        else
+            return;
+        if (validateInput($("#inputPrakruti")))
+            flag = true;
+        else
+            return;
+
+        var Gender = $('#ddlGender').val();
+        if (Gender == "Female")
+            if (validateInput($("#inputMensturalHistory")))
+                flag = true;
+            else
+                return;
+
+
+        return flag;
+    }
+
+
+</script>
+
