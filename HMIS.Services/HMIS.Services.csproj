@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1094C67A-146F-45EF-B921-B0A072EDCD1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HMIS.Services</RootNamespace>
+    <AssemblyName>HMIS.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\LoginService.cs" />
+    <Compile Include="Case\ComplaintsService.cs" />
+    <Compile Include="Case\DailyDietService.cs" />
+    <Compile Include="Case\DailyRoutineService.cs" />
+    <Compile Include="Case\DiagnosisService.cs" />
+    <Compile Include="Case\FollowupService.cs" />
+    <Compile Include="Case\MedicineService.cs" />
+    <Compile Include="Case\NadiDetailsService.cs" />
+    <Compile Include="Case\NewCaseService.cs" />
+    <Compile Include="Case\PanchakarmaService.cs" />
+    <Compile Include="Home\DashboardService.cs" />
+    <Compile Include="Masters\OilGheeMasterService.cs" />
+    <Compile Include="Masters\MedicineMasterService.cs" />
+    <Compile Include="Patient\NewPatientService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HMIS.Data\HMIS.Data.csproj">
+      <Project>{2ea4c92c-92c7-4b9a-b11b-ca98a0a99810}</Project>
+      <Name>HMIS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMIS.Models\HMIS.Models.csproj">
+      <Project>{275c45fd-67d8-44be-be65-8e7a70a98d07}</Project>
+      <Name>HMIS.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

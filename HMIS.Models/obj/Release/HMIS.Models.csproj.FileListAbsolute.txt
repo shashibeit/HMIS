@@ -1,0 +1,10 @@
+D:\Server\HMIS_WEB\HMIS.Models\bin\Release\HMIS.Models.dll
+D:\Server\HMIS_WEB\HMIS.Models\bin\Release\HMIS.Models.pdb
+D:\Server\HMIS_WEB\HMIS.Models\obj\Release\HMIS.Models.csproj.CoreCompileInputs.cache
+D:\Server\HMIS_WEB\HMIS.Models\obj\Release\HMIS.Models.dll
+D:\Server\HMIS_WEB\HMIS.Models\obj\Release\HMIS.Models.pdb
+D:\Server\HMIS_WEB\HMIS.Models\obj\Release\HMIS.Models.csprojAssemblyReference.cache
+D:\Server\HMIS_WEB\HMIS.Models\bin\Release\log4net.dll
+D:\Server\HMIS_WEB\HMIS.Models\bin\Release\log4net.pdb
+D:\Server\HMIS_WEB\HMIS.Models\bin\Release\log4net.xml
+D:\Server\HMIS_WEB\HMIS.Models\obj\Release\HMIS.Models.csproj.CopyComplete

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{275C45FD-67D8-44BE-BE65-8E7A70A98D07}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HMIS.Models</RootNamespace>
+    <AssemblyName>HMIS.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>C:\Users\shash\Downloads\log4net-2.0.8-bin-newkey\log4net-2.0.8\bin\net\4.5\release\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ModelLogin.cs" />
+    <Compile Include="Case\Complaints.cs" />
+    <Compile Include="Case\ModelBasti.cs" />
+    <Compile Include="Case\ModelFollowup.cs" />
+    <Compile Include="Case\GheeDetails.cs" />
+    <Compile Include="Case\ModelDiagnosis.cs" />
+    <Compile Include="Case\ModelMedicine.cs" />
+    <Compile Include="Case\ModelRaktaMokshana.cs" />
+    <Compile Include="Case\ModelNasya.cs" />
+    <Compile Include="Case\ModelVirechana.cs" />
+    <Compile Include="Case\ModelVaman.cs" />
+    <Compile Include="Case\NadiDetails.cs" />
+    <Compile Include="Case\OilDetails.cs" />
+    <Compile Include="Home\ModelDashboard.cs" />
+    <Compile Include="Logger\BaseLogModel.cs" />
+    <Compile Include="Logger\ILoggerManager.cs" />
+    <Compile Include="Logger\Log4NetLoggerManager.cs" />
+    <Compile Include="Masters\MedicineMasterModel.cs" />
+    <Compile Include="Patient\ModelNewPatient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,12 @@
+D:\Server\HMIS_WEB\HMIS.Services\bin\Debug\HMIS.Services.dll
+D:\Server\HMIS_WEB\HMIS.Services\bin\Debug\HMIS.Services.pdb
+D:\Server\HMIS_WEB\HMIS.Services\bin\Debug\HMIS.Data.dll
+D:\Server\HMIS_WEB\HMIS.Services\bin\Debug\HMIS.Models.dll
+D:\Server\HMIS_WEB\HMIS.Services\bin\Debug\log4net.dll
+D:\Server\HMIS_WEB\HMIS.Services\bin\Debug\HMIS.Data.pdb
+D:\Server\HMIS_WEB\HMIS.Services\bin\Debug\HMIS.Models.pdb
+D:\Server\HMIS_WEB\HMIS.Services\obj\Debug\HMIS.Services.csprojAssemblyReference.cache
+D:\Server\HMIS_WEB\HMIS.Services\obj\Debug\HMIS.Services.csproj.CoreCompileInputs.cache
+D:\Server\HMIS_WEB\HMIS.Services\obj\Debug\HMIS.Services.csproj.CopyComplete
+D:\Server\HMIS_WEB\HMIS.Services\obj\Debug\HMIS.Services.dll
+D:\Server\HMIS_WEB\HMIS.Services\obj\Debug\HMIS.Services.pdb
